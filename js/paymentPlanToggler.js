@@ -183,7 +183,7 @@ function paymentPlanToggler(togglerValue, currencySymbol) {
       } else {
         params.membership_type_id = parseInt($('#membership_type_id_1').val());
       }
-      let url = CRM.url('civicrm/member/instalment-schedule', params, 'back');
+      let url = CRM.url('civicrm/member/instalment-schedule&smartyDebug=1', params, 'back');
       CRM.loadPage(url, {
         target: '#instalment_schedule_table',
         dialog: false,

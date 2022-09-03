@@ -3,6 +3,7 @@
 <table id="instalment_row_table" class="selector row-highlight" style="position: relative;">
   <thead class="sticky">
   <tr>
+    <th scope="col">{ts}Include{/ts}</th>
     <th scope="col"></th>
     <th scope="col">{ts}Instalment no{/ts}</th>
     <th scope="col">{ts}Date{/ts}</th>
@@ -14,6 +15,7 @@
   <tbody class="sticky">
   {foreach from=$instalments item=instalment}
     <tr>
+      <td><input class="schedule-row-active" type="checkbox" data-ident="{$instalment.instalment_no}" checked ></td>
       <td><a class="schedule-row nowrap bold crm-expand-row" title="view subitem" href="#">&nbsp</a></td>
       <td>{$instalment.instalment_no}</td>
       <td>{$instalment.instalment_date|crmDate}</td>
@@ -68,7 +70,7 @@
     <td colspan="3"></td>
     <td class="instalment-amount-text"><span>{ts}Sub Total Amount{/ts}</span></td>
     <td>
-      {$currency_symbol}&nbsp;{$sub_total|crmNumberFormat:2}
+      {$currency_symbol}&nbsp;<span id="instalment-amount">{$sub_total|crmNumberFormat:2}</span>
     </td>
     <td></td>
   </tr>
@@ -76,7 +78,7 @@
     <td colspan="3"></td>
     <td class="instalment-amount-text">{ts}Total{/ts} {$tax_term} {ts}Amount{/ts}</td>
     <td>
-      {$currency_symbol}&nbsp;{$tax_amount|crmNumberFormat:2}
+      {$currency_symbol}&nbsp;<span id="instalment-tax-amount">{$tax_amount|crmNumberFormat:2}</span>
     </td>
     <td></td>
   </tr>

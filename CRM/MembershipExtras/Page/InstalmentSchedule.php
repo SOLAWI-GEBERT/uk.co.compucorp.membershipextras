@@ -2,7 +2,13 @@
 
 class CRM_MembershipExtras_Page_InstalmentSchedule extends CRM_Core_Page {
 
-  public function run() {
+    function __construct($title = NULL, $mode = NULL)
+    {
+        parent::__construct($title, $mode);
+        $this->_backward_search = array();
+    }
+
+    public function run() {
     $this->assignInstalments();
     $this->assignCurrencySymbol();
     $this->assignTaxTerm();
@@ -38,6 +44,9 @@ class CRM_MembershipExtras_Page_InstalmentSchedule extends CRM_Core_Page {
       $this->assign('total_amount', $result['values']['total_amount']);
       $this->assign('membership_start_date', $result['values']['membership_start_date']);
       $this->assign('membership_end_date', $result['values']['membership_end_date']);
+
+      $this->_backward_search = $result['values']['instalments'];
+      Civi::resources()->addVars('membershipextras_paymentplan',$this->_backward_search);
 
       if (isset($result['values']['prorated_number']) && isset($result['values']['prorated_unit'])) {
         $this->assign('prorated_number', $result['values']['prorated_number']);
