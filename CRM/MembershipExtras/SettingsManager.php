@@ -99,6 +99,34 @@ class CRM_MembershipExtras_SettingsManager {
     return $updateStartDateRenewal;
   }
 
+    /**
+     * Gets Update start date renewal configuration
+     *
+     * @return int
+     */
+    public static function getAllowItemmanager() {
+        $updateStartDateRenewal = self::getSettingValue('membershipextras_paymentplan_use_itemmanager_as_period_source');
+        if (empty($updateStartDateRenewal)) {
+            $updateStartDateRenewal = 0;
+        }
+
+        return $updateStartDateRenewal;
+    }
+
+    /**
+     * Gets Update start date renewal configuration
+     *
+     * @return int
+     */
+    public static function getDisableMail() {
+        $updateStartDateRenewal = self::getSettingValue('membershipextras_paymentplan_disable_automatic_response_mail');
+        if (empty($updateStartDateRenewal)) {
+            $updateStartDateRenewal = 0;
+        }
+
+        return $updateStartDateRenewal;
+    }
+
   public static function getMembershipTypeSettings(int $membershipTypeId) {
     $settings = [];
     $membershipTypeSettings = Civi::settings()->get(self::MEMBERSHIP_TYPE_SETTINGS_KEY);
