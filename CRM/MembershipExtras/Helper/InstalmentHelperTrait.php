@@ -3,6 +3,7 @@
 use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsSchedule;
 use CRM_MembershipExtras_Service_MembershipTypeDurationCalculator as DurationCalculator;
 use CRM_MembershipExtras_Service_MembershipTypeDatesCalculator as DateCalculator;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
 
@@ -36,11 +37,18 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
    * @param $startDate
    * @param DateTime|NULL $endDate
    * @param DateTime|NULL $joinDate
+   * @param null $priceValues Array of selected pricevalues
    *
    * @return int
    * @throws Exception
    */
-  private function getInstalmentsNumber($membershipType, $schedule, $startDate = NULL, $endDate = NULL, $joinDate = NULL) {
+  private function getInstalmentsNumber($membershipType,
+                                        $schedule,
+                                        $startDate = NULL,
+                                        $endDate = NULL,
+                                        $joinDate = NULL,
+                                        $priceValues = NULL
+  ) {
     if ($membershipType->period_type == 'fixed' && $schedule == InstalmentsSchedule::MONTHLY && !is_null($startDate)) {
       $durationCalculator = new DurationCalculator($membershipType, new DateCalculator());
 
@@ -52,7 +60,13 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
       return 1;
     }
 
-    return CRM_MembershipExtras_Helper_InstalmentSchedule::getInstalmentCountBySchedule($schedule);
+    if ( SettingsManager::getAllowItemmanager())
+        return  CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule::getInstalmentCountBySchedule(
+            $schedule,
+            $startDate,
+            $priceValues);
+    else
+        return CRM_MembershipExtras_Helper_InstalmentSchedule::getInstalmentCountBySchedule($schedule);
   }
 
 }

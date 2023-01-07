@@ -93,15 +93,28 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsSchedule {
    * @return mixed
    * @throws Exception
    */
-  public function generate($paymentMethod, DateTime $startDate = NULL, DateTime $endDate = NULL, DateTime $joinDate = NULL) {
+  public function generate($paymentMethod,
+                           DateTime $startDate = NULL,
+                           DateTime $endDate = NULL,
+                           DateTime $joinDate = NULL,
+                           $selectedPriceValues = NULL
+
+  ) {
     if (empty($startDate)) {
       $startDate = new DateTime($this->getMembershipStartDate($this->membershipTypes[0]->id, $startDate, $endDate, $joinDate));
     }
     $this->startDate = $startDate;
     $this->endDate = $endDate;
     $this->joinDate = $joinDate;
+    $this->priceValues = $selectedPriceValues;
+    //** @var  */
     $this->instalmentCount = $this->getInstalmentsNumber(
-      $this->membershipTypes[0], $this->schedule, $this->startDate, $this->endDate, $this->joinDate
+      $this->membershipTypes[0],
+      $this->schedule,
+      $this->startDate,
+      $this->endDate,
+      $this->joinDate,
+      $this->priceValues
     );
 
     $instalmentAmount = $this->calculateInstalmentAmount();
@@ -136,7 +149,8 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsSchedule {
     $instalment->setInstalmentDate(new DateTime($firstInstalmentDate));
     $instalment->setInstalmentAmount($instalmentAmount);
 
-    $instalments['instalments'][] = $instalment;
+      /** @var array(CRM_MembershipExtras_DTO_ScheduleInstalment) $instalments - init with first installment*/
+      $instalments['instalments'][] = $instalment;
 
     if ($this->instalmentCount > 1) {
       $previousInstalmentDate = $firstInstalmentDate;

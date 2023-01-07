@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/SettingsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/SettingsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings/PaymentPlan.setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings/PaymentPlan.setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/API/PaymentSchedule/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/API/PaymentSchedule/Base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,11 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="SECOND" color="Orange" />
+    <fileColor scope="DATABASE" color="Blue" />
+    <fileColor scope="HTML" color="Green" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,6 +37,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="NamedScopeManager">
+    <scope name="FORMS" pattern="file[uk.co.compucorp.membershipextras]:Civi/Angular/Page/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Logic/*||file[uk.co.compucorp.membershipextras]:CRM/ACL/Form/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Page/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Form/*" />
+    <scope name="HTML" pattern="file[uk.co.compucorp.membershipextras]:templates//*" />
+    <scope name="DATABASE" pattern="file[uk.co.compucorp.membershipextras]:xml/schema//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/DAO//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/BAO//*" />
+    <scope name="SECOND" pattern="file:*itemmanager*" />
+  </component>
+  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="3fd2ecd5-9ab2-4a33-adbe-73b2d30b4d08" name="localhost" />
+    </servers>
+  </component>
   <component name="ProjectId" id="2EFpEVBlu82M0ekxhE6elzNu6xQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,18 +58,24 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Constants" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CRM/MembershipExtras/Helper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.skipped.paths" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CRM/MembershipExtras/Helper" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -59,7 +87,16 @@
       <updated>1662201075157</updated>
       <workItem from="1662201079658" duration="12135000" />
       <workItem from="1662308308934" duration="225000" />
-      <workItem from="1671475482756" duration="1168000" />
+      <workItem from="1671475482756" duration="2451000" />
+      <workItem from="1671645550440" duration="957000" />
+      <workItem from="1671646520491" duration="221000" />
+      <workItem from="1671646754486" duration="979000" />
+      <workItem from="1671647757346" duration="507000" />
+      <workItem from="1671648271235" duration="1607000" />
+      <workItem from="1672252241883" duration="1821000" />
+      <workItem from="1672254086001" duration="2380000" />
+      <workItem from="1672337206113" duration="6074000" />
+      <workItem from="1673111038703" duration="8500000" />
     </task>
     <servers />
   </component>
@@ -77,5 +114,40 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Page/InstalmentSchedule.php</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../civicrm-core/CRM/Member/Page/Tab.php</url>
+          <line>214</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php</url>
+          <line>62</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
+          <line>78</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
+          <line>109</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

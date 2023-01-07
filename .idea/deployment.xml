@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="MemberShip">
+      <paths name="Local">
         <serverdata>
           <mappings>
             <mapping deploy="uk.co.compucorp.membershipextras-2.0.0" local="$PROJECT_DIR$" web="/" />
