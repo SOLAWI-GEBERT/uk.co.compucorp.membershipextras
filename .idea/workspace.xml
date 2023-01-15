@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/API/PaymentSchedule/Base.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/API/PaymentSchedule/Base.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/instalmentSchedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/instalmentSchedule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/paymentPlanToggler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paymentPlanToggler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="DONT_SYNCHRONIZE">
     <execution />
   </component>
   <component name="FileColors">
@@ -43,7 +43,7 @@
     <scope name="DATABASE" pattern="file[uk.co.compucorp.membershipextras]:xml/schema//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/DAO//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/BAO//*" />
     <scope name="SECOND" pattern="file:*itemmanager*" />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" max_simultaneous_connections="1" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="3fd2ecd5-9ab2-4a33-adbe-73b2d30b4d08" name="localhost" />
@@ -58,7 +58,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Constants" value="true" />
+    <property name="Constants" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -69,7 +69,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="settings.php.debug.skipped.paths" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -96,8 +96,18 @@
       <workItem from="1672252241883" duration="1821000" />
       <workItem from="1672254086001" duration="2380000" />
       <workItem from="1672337206113" duration="6074000" />
-      <workItem from="1673111038703" duration="8500000" />
+      <workItem from="1673111038703" duration="10613000" />
+      <workItem from="1673711856625" duration="14014000" />
+      <workItem from="1673779638586" duration="20296000" />
     </task>
+    <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
+      <created>1673122201449</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673122201449</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +124,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ENH Introduce prototype to switch to itemmanager settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENH Introduce prototype to switch to itemmanager settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -135,13 +149,88 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
-          <line>78</line>
-          <option name="timeStamp" value="15" />
+          <line>115</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
-          <line>109</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Post/ContributionRecur.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Post/MembershipPayment.php</url>
+          <line>79</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PreProcess/ContributionView.php</url>
+          <line>24</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipOfflineAutoRenewProcessor.php</url>
+          <line>35</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipTypeSetting.php</url>
+          <line>34</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/membershipextras.php</url>
+          <line>375</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/membershipextras.php</url>
+          <line>225</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Member/Form/Membership.php</url>
+          <line>1010</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Member/Form/Membership.php</url>
+          <line>1318</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Member/Form/Membership.php</url>
+          <line>1130</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Member/Form/Membership.php</url>
+          <line>1367</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Core/Form.php</url>
+          <line>572</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
+          <line>104</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
+          <line>95</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Service/MembershipInstalmentsHandler.php</url>
+          <line>51</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Service/MembershipInstalmentsHandler.php</url>
+          <line>120</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

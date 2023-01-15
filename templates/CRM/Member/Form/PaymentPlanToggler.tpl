@@ -11,6 +11,7 @@
 </script>
 <div id="payment_plan_fields_tabs">
   <input name="contribution_type_toggle" type="hidden">
+  <input name="payment_plan_datastorage" id="payment_plan_datastorage" type="hidden">
   <div class="ui-tabs">
     <ul class="ui-tabs-nav ui-helper-clearfix">
       <li class="crm-tab-button ui-corner-top ui-tabs-active" data-selector="contribution">

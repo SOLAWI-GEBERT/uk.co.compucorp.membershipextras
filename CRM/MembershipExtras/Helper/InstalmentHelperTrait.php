@@ -61,10 +61,15 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
     }
 
     if ( SettingsManager::getAllowItemmanager())
-        return  CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule::getInstalmentCountBySchedule(
-            $schedule,
-            $startDate,
-            $priceValues);
+    {
+        $resultData = CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule::getInstalmentCountBySchedule(
+        $schedule,
+        $startDate,
+        $priceValues);
+
+        return $resultData['InstalmentInterval'];
+
+    }
     else
         return CRM_MembershipExtras_Helper_InstalmentSchedule::getInstalmentCountBySchedule($schedule);
   }

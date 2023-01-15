@@ -75,11 +75,17 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
    */
   public static function getInstalmentCountBySchedule($schedule, DateTime $startDate = NULL, $priceValues = NULL) {
 
+      $instalmentData = array(
+          'InstalmentInterval' => 0,
+          'ItemManagerSettings' => NULL,
+          'ItemManagerPeriod' => 0
+      );
+
       # Can do nothing here
       if (empty($priceValues) || empty($startDate))
       {
           new API_Exception(ts('At least start date and and one price values must be selected.'));
-          return 0;
+          return $instalmentData;
       }
 
       $priceValueKeys = array_keys($priceValues);
@@ -103,7 +109,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       if ($noExceptionsCount > 0 && $isExceptionsCount > 0)
       {
           new API_Exception(ts('The selected set of price values belongs to different periods.'));
-          return 0;
+          return $instalmentData;
       }
 
       # start here to get the first setting (all records)
@@ -116,7 +122,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       if (empty($firstSetting))
       {
           new API_Exception(ts('No ItemmanagerSettings has been found.'));
-          return 0;
+          return $instalmentData;
       }
 
       # now we need the period record
@@ -130,7 +136,11 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       $instalmentInterval = $firstSetting['enable_period_exception'] ?
                                 $firstSetting['exception_periods']:$relatedPeriod['periods'];
 
-      return $instalmentInterval;
+      $instalmentData['InstalmentInterval'] = $instalmentInterval;
+      $instalmentData['ItemManagerSettings'] = $firstSetting;
+      $instalmentData['ItemManagerPeriod'] = $relatedPeriod;
+
+      return $instalmentData;
 
   }
 

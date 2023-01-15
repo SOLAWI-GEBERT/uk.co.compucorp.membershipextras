@@ -2,6 +2,7 @@
 
 use CRM_MembershipExtras_Service_RecurringContributionLineItemCreator as RecurringContributionLineItemCreator;
 use CRM_MembershipExtras_Helper_InstalmentSchedule as InstalmentScheduleHelper;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
 
@@ -34,6 +35,11 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
    */
   private $operation;
 
+    /**
+     * @var array
+     */
+  private $userselection;
+
   /**
    * @var int
    */
@@ -45,6 +51,13 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
     $this->formSubmittedValues = $this->form->exportValues();
     $this->membershipTypeId = $this->getMembershipTypeId();
     $this->operation = $operation;
+
+    # retrieve here more post values
+      if( isset($_POST['payment_plan_datastorage']))
+      {
+          $this->userselection = json_decode($_POST['payment_plan_datastorage'], true);
+      }
+
   }
 
   /**
@@ -80,7 +93,11 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
 
     $membershipTypeObj = CRM_Member_BAO_MembershipType::findById($this->membershipTypeId);
     $startDate = $this->getStartDate();
-    $actualInstalmentCount = $this->getInstalmentsNumber($membershipTypeObj, $paymentPlanSchedule, $startDate);
+    if(empty($this->userselection))
+        $actualInstalmentCount = $this->getInstalmentsNumber($membershipTypeObj, $paymentPlanSchedule, $startDate);
+    else
+        # here try to use the user selected amount
+        $actualInstalmentCount = count($this->userselection['payments']);
     $instalmentsHandler = new CRM_MembershipExtras_Service_MembershipInstalmentsHandler($this->recurContributionID);
     $instalmentsHandler->setInstalmentsCount($actualInstalmentCount);
     $instalmentsHandler->createRemainingInstalmentContributionsUpfront();

@@ -1,6 +1,7 @@
 <?php
 
 use CRM_MembershipExtras_ExtensionUtil as E;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 /**
  * Implements form changes needed to be done to add payment plan as an option to
@@ -52,6 +53,10 @@ class CRM_MembershipExtras_Hook_BuildForm_MembershipPaymentPlan {
       CRM_Utils_Request::retrieve('contribution_type_toggle', 'String', $this->form, FALSE);
     $this->form->assign('contribution_type_toggle', $paymentToggler ?: 'contribution');
     $this->form->add('select', 'payment_plan_schedule', E::ts('Schedule'), [], FALSE);
+    # here a hidden type to store dynamically values from the sub page
+    $this->form->assign('payment_plan_datastorage',"{'payments':{}}");
+    $notUsesItemManager = !SettingsManager::getAllowItemmanager();
+    $this->form->assign('enable_paymentplan_period_selector',$notUsesItemManager);
     CRM_Core_Region::instance('page-body')->add([
       'template' => "{$this->templatePath}/CRM/Member/Form/PaymentPlanToggler.tpl",
     ]);

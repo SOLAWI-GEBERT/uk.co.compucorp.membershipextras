@@ -44,7 +44,26 @@ CRM.$(function ($) {
         var instalment_tax_amount_element = document.getElementById('instalment-tax-amount');
         instalment_tax_amount_element.innerText = instalment_tax_amount.toFixed(2)
 
+          // update form element
+          var sched_storage = document.getElementById('payment_plan_datastorage');
+          // play back shown data
+          sched_storage.value = "{";
+          sched_storage.value += '"payments":' +JSON.stringify(payments) + ",";
+          sched_storage.value += '"payment_selected":{';
 
+          for(var element in checks) {
+              if(element != '0') sched_storage.value += ",";
+              if(checks.hasOwnProperty(element))
+                  if(checks[element].dataset.hasOwnProperty('ident'))
+                  {
+                      var ident = checks[element].dataset.ident;
+                      sched_storage.value += '"' + ident + '":' + checks[element].checked;
+                  }
+
+          }
+
+          sched_storage.value +="}}";
+          console.log("Payments " + sched_storage.value );
 
 
       });
