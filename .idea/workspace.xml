@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/instalmentSchedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/instalmentSchedule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/paymentPlanToggler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paymentPlanToggler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/CRM/MembershipExtras/Page/InstalmentSchedule.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/MembershipExtras/Page/InstalmentSchedule.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,7 @@
     <scope name="DATABASE" pattern="file[uk.co.compucorp.membershipextras]:xml/schema//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/DAO//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/BAO//*" />
     <scope name="SECOND" pattern="file:*itemmanager*" />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" max_simultaneous_connections="1" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" max_simultaneous_connections="1" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="3fd2ecd5-9ab2-4a33-adbe-73b2d30b4d08" name="localhost" />
@@ -99,6 +96,7 @@
       <workItem from="1673111038703" duration="10613000" />
       <workItem from="1673711856625" duration="14014000" />
       <workItem from="1673779638586" duration="20296000" />
+      <workItem from="1674153866475" duration="5080000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -151,11 +149,6 @@
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
           <line>115</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Post/ContributionRecur.php</url>
-          <line>28</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Post/MembershipPayment.php</url>
@@ -214,7 +207,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
-          <line>104</line>
+          <line>107</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -229,8 +222,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Service/MembershipInstalmentsHandler.php</url>
-          <line>120</line>
+          <line>121</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Service/InstalmentReceiveDateCalculator.php</url>
+          <line>55</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
+          <line>105</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

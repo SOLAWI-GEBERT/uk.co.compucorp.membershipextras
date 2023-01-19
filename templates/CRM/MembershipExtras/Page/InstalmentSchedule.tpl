@@ -15,7 +15,15 @@
   <tbody class="sticky">
   {foreach from=$instalments item=instalment}
     <tr>
-      <td><input class="schedule-row-active" type="checkbox" data-ident="{$instalment.instalment_no}" checked ></td>
+      <td>
+
+            <input class="schedule-row-active" type="checkbox" data-ident="{$instalment.instalment_no}" checked
+                    {if $instalment.instalment_no < 2}
+                        disabled readonly
+                    {/if}
+            >
+
+      </td>
       <td><a class="schedule-row nowrap bold crm-expand-row" title="view subitem" href="#">&nbsp</a></td>
       <td>{$instalment.instalment_no}</td>
       <td>{$instalment.instalment_date|crmDate}</td>

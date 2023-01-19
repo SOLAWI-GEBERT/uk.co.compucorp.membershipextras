@@ -116,13 +116,22 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
   /**
    * Creates the Remaining instalments contributions for
    * the membership new recurring contribution.
+   * @param array $userselection
    */
-  public function createRemainingInstalmentContributionsUpfront() {
+  public function createRemainingInstalmentContributionsUpfront($userselection = null) {
     if ($this->instalmentsCount == 0) {
       $this->instalmentsCount = (int) $this->currentRecurContribution['installments'];
     }
     for ($contributionNumber = 2; $contributionNumber <= $this->instalmentsCount; $contributionNumber++) {
-      $this->createContribution($contributionNumber);
+      if(empty($userselection))
+        $this->createContribution($contributionNumber);
+      else
+      {
+          // allow to deselect contributions in paymentplan
+          if ($userselection[$contributionNumber])
+              $this->createContribution($contributionNumber);
+
+      }
     }
   }
 

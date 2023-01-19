@@ -52,10 +52,11 @@ CRM.$(function ($) {
           sched_storage.value += '"payment_selected":{';
 
           for(var element in checks) {
-              if(element != '0') sched_storage.value += ",";
+
               if(checks.hasOwnProperty(element))
                   if(checks[element].dataset.hasOwnProperty('ident'))
                   {
+                      if(element != '0') sched_storage.value += ",";
                       var ident = checks[element].dataset.ident;
                       sched_storage.value += '"' + ident + '":' + checks[element].checked;
                   }

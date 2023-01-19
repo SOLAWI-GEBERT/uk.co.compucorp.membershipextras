@@ -100,7 +100,10 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
         $actualInstalmentCount = count($this->userselection['payments']);
     $instalmentsHandler = new CRM_MembershipExtras_Service_MembershipInstalmentsHandler($this->recurContributionID);
     $instalmentsHandler->setInstalmentsCount($actualInstalmentCount);
-    $instalmentsHandler->createRemainingInstalmentContributionsUpfront();
+      if(empty($this->userselection))
+        $instalmentsHandler->createRemainingInstalmentContributionsUpfront();
+      else
+          $instalmentsHandler->createRemainingInstalmentContributionsUpfront($this->userselection['payment_selected']);
 
     $this->updateNextScheduledContributionDate();
   }
