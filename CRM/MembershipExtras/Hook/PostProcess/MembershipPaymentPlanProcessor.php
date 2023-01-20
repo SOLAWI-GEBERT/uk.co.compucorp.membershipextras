@@ -174,6 +174,17 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
       }
     }
 
+      # check startdate
+      if( SettingsManager::getFixedDay() && $startDate->format('w') != SettingsManager::getFixedDay())
+      {
+          $year = $startDate->format('Y');
+          $month = $startDate->format('m');
+          $startDate = new DateTime($startDate->format('Y-m-d').'T00:00:00+00:00');
+          $startDate = $startDate->setDate($year,$month,SettingsManager::getFixedDay());
+          if ($startDate < $joinDate)
+              $startDate->add(new DateInterval('P1M'));
+      }
+
     return $startDate;
   }
 

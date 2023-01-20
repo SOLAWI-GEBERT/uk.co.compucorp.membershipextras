@@ -127,6 +127,48 @@ class CRM_MembershipExtras_SettingsManager {
         return $updateStartDateRenewal;
     }
 
+    /**
+     * Gets disable renew
+     *
+     * @return int
+     */
+    public static function getDisableRenew() {
+        $updateStartDateRenewal = self::getSettingValue('membershipextras_paymentplan_disable_autorenew');
+        if (empty($updateStartDateRenewal)) {
+            $updateStartDateRenewal = 0;
+        }
+
+        return $updateStartDateRenewal;
+    }
+
+    /**
+     * Gets enabled fixation
+     *
+     * @return int
+     */
+    public static function getEnableFixedDay() {
+        $updateStartDateRenewal = self::getSettingValue('membershipextras_paymentplan_enable_fixed_startdate');
+        if (empty($updateStartDateRenewal)) {
+            $updateStartDateRenewal = 0;
+        }
+
+        return $updateStartDateRenewal;
+    }
+
+    /**
+     * Gets Fixed day settings
+     *
+     * @return int
+     */
+    public static function getFixedDay() {
+        $updateStartDateRenewal = self::getSettingValue('membershipextras_paymentplan_fixed_day');
+        if (empty($updateStartDateRenewal)) {
+            $updateStartDateRenewal = 0;
+        }
+
+        return $updateStartDateRenewal;
+    }
+
   public static function getMembershipTypeSettings(int $membershipTypeId) {
     $settings = [];
     $membershipTypeSettings = Civi::settings()->get(self::MEMBERSHIP_TYPE_SETTINGS_KEY);

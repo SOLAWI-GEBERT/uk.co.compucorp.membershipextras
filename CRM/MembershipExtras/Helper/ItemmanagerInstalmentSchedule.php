@@ -2,6 +2,7 @@
 
 use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsSchedule;
 use Civi\Api4\ItemmanagerPeriods;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
 
@@ -73,7 +74,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
    * @param null $priceValues current selected price values
    * @return int
    */
-  public static function getInstalmentCountBySchedule($schedule, DateTime $startDate = NULL, $priceValues = NULL) {
+  public static function getInstalmentCountBySchedule($schedule, DateTime $startDate = NULL, $priceValues = NULL):array {
 
       $instalmentData = array(
           'InstalmentInterval' => 0,
@@ -84,9 +85,16 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       # Can do nothing here
       if (empty($priceValues) || empty($startDate))
       {
-          new API_Exception(ts('At least start date and and one price values must be selected.'));
+          $errorResponse = [
+              'is_error' => TRUE,
+              'error_message' => ts('At least start date and and one price values must be selected.'),
+          ];
+          CRM_Core_Page_AJAX::returnJsonResponse($errorResponse);
+
           return $instalmentData;
       }
+
+
 
       $priceValueKeys = array_keys($priceValues);
       # we need to check a consistent period exception selection
@@ -108,7 +116,12 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
 
       if ($noExceptionsCount > 0 && $isExceptionsCount > 0)
       {
-          new API_Exception(ts('The selected set of price values belongs to different periods.'));
+          $errorResponse = [
+              'is_error' => TRUE,
+              'error_message' => ts('The selected set of price values belongs to different time intervals.'),
+          ];
+          CRM_Core_Page_AJAX::returnJsonResponse($errorResponse);
+
           return $instalmentData;
       }
 
@@ -121,7 +134,12 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
 
       if (empty($firstSetting))
       {
-          new API_Exception(ts('No ItemmanagerSettings has been found.'));
+          $errorResponse = [
+              'is_error' => TRUE,
+              'error_message' => ts('No ItemmanagerSettings has been found. Inform administrator.'),
+          ];
+          CRM_Core_Page_AJAX::returnJsonResponse($errorResponse);
+
           return $instalmentData;
       }
 

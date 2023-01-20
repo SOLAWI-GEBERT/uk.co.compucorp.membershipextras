@@ -6,6 +6,7 @@ use CRM_MembershipExtras_Service_MembershipPeriodType_FixedPeriodTypeCalculator 
 use CRM_MembershipExtras_Service_MembershipPeriodType_RollingPeriodTypeCalculator as RollingPeriodCalculator;
 use CRM_MembershipExtras_Hook_CustomDispatch_CalculateContributionReceiveDate as CalculateContributionReceiveDateDispatcher;
 use CRM_MembershipExtras_Helper_InstalmentSchedule as InstalmentScheduleHelper;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 /**
  * Class CRM_MembershipExtras_Service_MembershipInstalmentsSchedule
@@ -103,6 +104,19 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsSchedule {
     if (empty($startDate)) {
       $startDate = new DateTime($this->getMembershipStartDate($this->membershipTypes[0]->id, $startDate, $endDate, $joinDate));
     }
+
+      # check startdate
+      if( SettingsManager::getFixedDay() && $startDate->format('w') != SettingsManager::getFixedDay())
+      {
+          $year = $startDate->format('Y');
+          $month = $startDate->format('m');
+          $startDate = new DateTime($startDate->format('Y-m-d').'T00:00:00+00:00');
+          $startDate = $startDate->setDate($year,$month,SettingsManager::getFixedDay());
+          if ($startDate < $joinDate)
+              $startDate->add(new DateInterval('P1M'));
+      }
+
+
     $this->startDate = $startDate;
     $this->endDate = $endDate;
     $this->joinDate = $joinDate;
