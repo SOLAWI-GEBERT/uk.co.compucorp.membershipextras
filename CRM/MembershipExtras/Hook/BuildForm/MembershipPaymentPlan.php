@@ -49,10 +49,13 @@ class CRM_MembershipExtras_Hook_BuildForm_MembershipPaymentPlan {
       return;
     }
 
+    $payment_plan_attr = !SettingsManager::getAllowItemmanager() ? [] : ['disable', 'readonly'];
+
+
     $paymentToggler =
       CRM_Utils_Request::retrieve('contribution_type_toggle', 'String', $this->form, FALSE);
     $this->form->assign('contribution_type_toggle', $paymentToggler ?: 'contribution');
-    $this->form->add('select', 'payment_plan_schedule', E::ts('Schedule'), [], FALSE);
+    $this->form->add('select', 'payment_plan_schedule', E::ts('Schedule'), [], FALSE, $payment_plan_attr);
     # here a hidden type to store dynamically values from the sub page
     $this->form->assign('payment_plan_datastorage',"{'payments':{}}");
     $notUsesItemManager = !SettingsManager::getAllowItemmanager();
