@@ -960,7 +960,7 @@ abstract class CRM_MembershipExtras_Job_OfflineAutoRenewal_PaymentPlan {
       'contribution_recur_id' => $recurContributionID,
       'line_item_id' => $newLineItem['id'],
       'start_date' => $lineItemStartDate,
-      'auto_renew' => 1,
+      'auto_renew' => !SettingsManager::getDisableRenew(),
     ]);
   }
 
@@ -992,7 +992,7 @@ abstract class CRM_MembershipExtras_Job_OfflineAutoRenewal_PaymentPlan {
       'contribution_recur_id' => $newRecurContributionId,
       'line_item_id' => $newLineItem['id'],
       'start_date' => $startDate,
-      'auto_renew' => 1,
+      'auto_renew' => !SettingsManager::getDisableRenew(),
     ]);
   }
 

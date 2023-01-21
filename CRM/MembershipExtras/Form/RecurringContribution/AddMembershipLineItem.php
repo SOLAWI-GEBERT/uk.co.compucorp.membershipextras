@@ -2,6 +2,7 @@
 
 use CRM_MembershipExtras_ExtensionUtil as E;
 use CRM_MembershipExtras_Service_MoneyUtilities as MoneyUtilities;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 /**
  * Form controller class to add a new membership as a line item in a payment plan.
@@ -183,10 +184,12 @@ class CRM_MembershipExtras_Form_RecurringContribution_AddMembershipLineItem exte
   private function getNextPeriodLineItems() {
     $lineItems = array();
 
+    $auto = !SettingsManager::getDisableRenew() ? True : False;
+
     $params = [
       'sequential' => 1,
       'contribution_recur_id' => $this->recurringContribution['id'],
-      'auto_renew' => TRUE,
+      'auto_renew' => $auto,
       'is_removed' => 0,
       'options' => ['limit' => 0],
       'api.LineItem.getsingle' => [

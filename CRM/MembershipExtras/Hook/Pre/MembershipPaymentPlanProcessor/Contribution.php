@@ -96,6 +96,15 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_Contribution 
     $this->alterFirstContributionParameters();
   }
 
+    /**
+     * Updates the instalment Count from dynamic calculation
+     * @param $instalmentsCount
+     */
+  public function correctInstalmentCount($instalmentsCount)
+  {
+      $this->instalmentsCount = $instalmentsCount;
+  }
+
   /**
    * Calculates Instalment Amount from the actual instalment count
    *

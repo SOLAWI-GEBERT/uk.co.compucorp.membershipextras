@@ -105,6 +105,7 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor {
       else
           $instalmentsHandler->createRemainingInstalmentContributionsUpfront($this->userselection['payment_selected']);
 
+      $instalmentsHandler->updateRecuringContributionInstalmentCount();
     $this->updateNextScheduledContributionDate();
   }
 

@@ -113,6 +113,24 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
     ]);
   }
 
+
+    /**
+     * Correct dynamically the instalment count
+     *
+     * @param null $userselection
+     */
+  public function updateRecuringContributionInstalmentCount() {
+
+      if ($this->instalmentsCount == $this->currentRecurContribution['installments']) return;
+
+      civicrm_api3('ContributionRecur', 'create', [
+          'sequential' => 1,
+          'installments' => $this->instalmentsCount,
+          'id' => $this->currentRecurContribution['id'],
+      ]);
+
+    }
+
   /**
    * Creates the Remaining instalments contributions for
    * the membership new recurring contribution.

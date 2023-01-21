@@ -1,5 +1,7 @@
 <?php
 
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
+
 class CRM_MembershipExtras_Hook_PostProcess_MembershipOfflineAutoRenewProcessor {
 
   /**
@@ -37,10 +39,14 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipOfflineAutoRenewProcessor 
       return;
     }
 
-    $recurContributionID = $this->getMembershipLastRecurContributionID();
-    $this->setMembershipToAutoRenew($recurContributionID);
-    $this->setRecurContributionAutoRenew($recurContributionID);
-    $this->setRecurringLineItemsAsAutoRenew($recurContributionID);
+    if (!SettingsManager::getDisableRenew())
+    {
+        $recurContributionID = $this->getMembershipLastRecurContributionID();
+        $this->setMembershipToAutoRenew($recurContributionID);
+        $this->setRecurContributionAutoRenew($recurContributionID);
+        $this->setRecurringLineItemsAsAutoRenew($recurContributionID);
+    }
+
 
   }
 
