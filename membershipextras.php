@@ -205,6 +205,14 @@ function membershipextras_civicrm_pre($op, $objectName, $id, &$params) {
     $contributionPreHook = new CRM_MembershipExtras_Hook_Pre_Contribution($op, $id, $params);
     $contributionPreHook->preProcess();
   }
+
+    if ($objectName === 'Membership' && $op == 'delete') {
+
+        $membershipDeletePostHook = new CRM_MembershipExtras_Hook_Post_MembershipPaymentPlanDelete($op, $id, $params);
+        $membershipDeletePostHook->postProcess();
+
+    }
+
 }
 
 /**
@@ -226,12 +234,7 @@ function membershipextras_civicrm_post($op, $objectName, $objectId, &$objectRef)
     $membershipPaymentPostHook->postProcess();
   }
 
-    if ($objectName === 'Membership' && $op == 'delete') {
 
-        $membershipDeletePostHook = new CRM_MembershipExtras_Hook_Post_MembershipPaymentPlanDelete($op, $objectId, $objectRef);
-        $membershipDeletePostHook->postProcess();
-
-    }
 }
 
 /**
