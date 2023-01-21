@@ -2,6 +2,7 @@
 
 use CRM_MembershipExtras_Service_InstalmentReceiveDateCalculator as InstalmentReceiveDateCalculator;
 use CRM_MembershipExtras_Hook_CustomDispatch_CalculateContributionReceiveDate as CalculateContributionReceiveDateDispatcher;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
 
@@ -48,9 +49,19 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
    */
   private $instalmentsCount = 0;
 
-  public function __construct($currentRecurContributionId) {
+  public function __construct($currentRecurContributionId, DateTime $startdate) {
     $this->setCurrentRecurContribution($currentRecurContributionId);
     $this->setLastContribution();
+    if (SettingsManager::getEnableFixedDay())
+    {
+        $this->updateRecuringContributionReceiveDate($startdate);
+        $this->currentRecurContribution['start_date'] = $startdate->format('Y-m-d').' 00:00:00';
+        $this->updateFirstContribution($startdate);
+        $this->lastContribution['receive_date'] = $startdate->format('Y-m-d').' 00:00:00';
+    }
+
+
+
     $this->setPreviousInstalmentDate($this->lastContribution['receive_date']);
 
     $this->receiveDateCalculator = new InstalmentReceiveDateCalculator($this->currentRecurContribution);
@@ -131,12 +142,43 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
 
     }
 
+    /**
+     * Correct dynamically the receive_date
+     *
+     * @param  $receive_date
+     */
+    private function updateRecuringContributionReceiveDate(DateTime $receive_date) {
+
+        civicrm_api3('ContributionRecur', 'create', [
+            'sequential' => 1,
+            'start_date' => $receive_date->format('Y-m-d'),
+            'id' => $this->currentRecurContribution['id'],
+        ]);
+
+    }
+
+    /**
+     * Correct dynamically the receive_date
+     *
+     * @param  $receive_date
+     */
+    private function updateFirstContribution(DateTime $receive_date) {
+
+        civicrm_api3('Contribution', 'create', [
+            'sequential' => 1,
+            'receive_date' => $receive_date->format('Y-m-d'),
+            'id' => $this->lastContribution['id'],
+        ]);
+
+    }
+
+
   /**
    * Creates the Remaining instalments contributions for
    * the membership new recurring contribution.
    * @param array $userselection
    */
-  public function createRemainingInstalmentContributionsUpfront($userselection = null) {
+  public function createRemainingInstalmentContributionsUpfront($userselection = null, $userpayments = null) {
     if ($this->instalmentsCount == 0) {
       $this->instalmentsCount = (int) $this->currentRecurContribution['installments'];
     }
