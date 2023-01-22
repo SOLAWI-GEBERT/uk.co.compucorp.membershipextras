@@ -8,15 +8,14 @@
     <author>Compuco</author>
     <email>hello@compuco.io</email>
   </maintainer>
-  <releaseDate>2022-05-09</releaseDate>
+  <releaseDate>2023-01-22</releaseDate>
   <version>5.2.0</version>
-  <develStage>stable</develStage>
+  <develStage>forked</develStage>
   <compatibility>
     <ver>15.39</ver>
   </compatibility>
   <comments>
-    Supported CiviCRM versions  :
-    - A patched version of CiviCRM 5.39.1 (Download link: https://github.com/compucorp/civicrm-core/releases/download/5.39.1%2Bpatch.dea7c0/civicrm-5.39.1+patch.dea7c0.tar.gz)
+    itemmanager patch with workflow for CSA
   </comments>
   <civix>
     <namespace>CRM/MembershipExtras</namespace>
