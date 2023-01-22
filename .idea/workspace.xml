@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/membershipextras.php" beforeDir="false" afterPath="$PROJECT_DIR$/membershipextras.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +37,7 @@
     <scope name="DATABASE" pattern="file[uk.co.compucorp.membershipextras]:xml/schema//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/DAO//*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/BAO//*" />
     <scope name="SECOND" pattern="file:*itemmanager*" />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" max_simultaneous_connections="1" />
+  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true" max_simultaneous_connections="1" />
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="3fd2ecd5-9ab2-4a33-adbe-73b2d30b4d08" name="localhost" />
@@ -97,7 +96,8 @@
       <workItem from="1673779638586" duration="20296000" />
       <workItem from="1674153866475" duration="5591000" />
       <workItem from="1674238823644" duration="9129000" />
-      <workItem from="1674299605816" duration="20616000" />
+      <workItem from="1674299605816" duration="20957000" />
+      <workItem from="1674398826766" duration="2086000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -132,11 +132,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Page/InstalmentSchedule.php</url>
-          <line>40</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../civicrm-core/CRM/Member/Page/Tab.php</url>
           <line>214</line>
           <option name="timeStamp" value="2" />
@@ -168,7 +163,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/membershipextras.php</url>
-          <line>385</line>
+          <line>387</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -235,6 +230,16 @@
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php</url>
           <line>54</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/membershipextras.php</url>
+          <line>460</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/membershipextras.php</url>
+          <line>454</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

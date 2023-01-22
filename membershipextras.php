@@ -1,5 +1,7 @@
 <?php
 
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
+
 require_once 'membershipextras.civix.php';
 
 use CRM_MembershipExtras_ExtensionUtil as E;
@@ -448,6 +450,14 @@ function membershipextras_civicrm_preProcess($formName, $form) {
  * @param $context
  */
 function membershipextras_civicrm_alterMailParams(&$params, $context) {
+
+    # block any mail from send
+    if (SettingsManager::getDisableMail() && $params['workflow'] == 'contribution_invoice_receipt')
+    {
+        $params['abortMailSend'] = True;
+        return;
+    }
+
   $alterMailParamsHook = new CRM_MembershipExtras_Hook_Alter_MailParamsHandler($params);
   $alterMailParamsHook->handle();
 }
