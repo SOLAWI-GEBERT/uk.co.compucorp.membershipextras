@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ENH Introduce prototype to switch to itemmanager settings" />
     <MESSAGE value="MNT Increasee version" />
-    <option name="LAST_COMMIT_MESSAGE" value="MNT Increasee version" />
+    <MESSAGE value="FIX force loading the php files" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX force loading the php files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,7 +150,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php</url>
-          <line>62</line>
+          <line>67</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

@@ -2,6 +2,7 @@
 
 use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsSchedule;
 use Civi\Api4\ItemmanagerPeriods;
+use Civi\Api4\ItemmanagerSettings;
 use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
@@ -100,15 +101,13 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       # we need to check a consistent period exception selection
 
       # we need to check a consistent period exception selection
-      $noExceptionsCount = Civi\Api4\ItemmanagerSettings
-          ::get()
+      $noExceptionsCount = ItemmanagerSettings::get()
           ->addWhere('price_field_value_id','IN',$priceValueKeys)
           ->addWhere('enable_period_exception','=',false)
           ->execute()
           ->count();
 
-      $isExceptionsCount = Civi\Api4\ItemmanagerSettings
-          ::get()
+      $isExceptionsCount = ItemmanagerSettings::get()
           ->addWhere('price_field_value_id','IN',$priceValueKeys)
           ->addWhere('enable_period_exception','=',true)
           ->execute()
@@ -126,8 +125,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       }
 
       # start here to get the first setting (all records)
-      $firstSetting = Civi\Api4\ItemmanagerSettings
-        ::get()
+      $firstSetting = ItemmanagerSettings::get()
           ->addWhere('price_field_value_id','IN',$priceValueKeys)
           ->execute()
           ->first();
@@ -144,8 +142,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       }
 
       # now we need the period record
-      $relatedPeriod = Civi\Api4\ItemmanagerPeriods
-          ::get()
+      $relatedPeriod = ItemmanagerPeriods::get()
           ->addWhere('id','=',$firstSetting['itemmanager_periods_id'])
           ->execute()
           ->single();
