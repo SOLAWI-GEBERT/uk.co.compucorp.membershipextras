@@ -452,7 +452,18 @@ function membershipextras_civicrm_preProcess($formName, $form) {
 function membershipextras_civicrm_alterMailParams(&$params, $context) {
 
     # block any mail from send
-    if (SettingsManager::getDisableMail() && $params['workflow'] == 'contribution_invoice_receipt')
+    if (SettingsManager::getDisableMail() && (
+        $params['workflow'] == 'contribution_invoice_receipt'||
+        $params['workflow'] == 'contribution_online_receipt' ||
+        $params['workflow'] == 'membership_online_receipt' ||
+        $params['workflow'] == 'membership_offline_receipt' ||
+        $params['workflow'] == 'contribution_offline_receipt' ||
+        $params['workflow'] == 'membership_autorenew_cancelled' ||
+        $params['workflow'] == 'contribution_recurring_cancelled' ||
+        $params['workflow'] == 'membership_autorenew_billing' ||
+        $params['workflow'] == 'contribution_recurring_billing'
+        )
+    )
     {
         $params['abortMailSend'] = True;
         return;
