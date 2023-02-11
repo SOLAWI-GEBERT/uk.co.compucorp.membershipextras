@@ -4,6 +4,7 @@ use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 require_once 'membershipextras.civix.php';
 
+
 use CRM_MembershipExtras_ExtensionUtil as E;
 
 /**

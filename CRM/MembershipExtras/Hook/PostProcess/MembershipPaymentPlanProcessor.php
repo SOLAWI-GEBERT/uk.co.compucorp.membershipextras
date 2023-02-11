@@ -1,5 +1,10 @@
 <?php
 
+define('__ROOT__', dirname(dirname(__FILE__)));
+
+require_once('../../Helper/InstalmentSchedule.php');
+require_once('../../Helper/ItemmanagerInstalmentSchedule.php');
+
 use CRM_MembershipExtras_Service_RecurringContributionLineItemCreator as RecurringContributionLineItemCreator;
 use CRM_MembershipExtras_Helper_InstalmentSchedule as InstalmentScheduleHelper;
 use CRM_MembershipExtras_SettingsManager as SettingsManager;

@@ -214,6 +214,11 @@ abstract class CRM_MembershipExtras_Job_OfflineAutoRenewal_PaymentPlan {
    * @throws \CRM_Core_Exception
    */
   public function run() {
+      
+      # do nothing in case disabled
+      if(SettingsManager::getDisableRenew())
+          return;
+      
     $exceptions = [];
     $paymentPlans = $this->getRecurringContributions();
 
