@@ -1,6 +1,6 @@
 <?php
 
-use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsSchedule;
+use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsScheduleService;
 use Civi\Api4\ItemmanagerPeriods;
 use Civi\Api4\ItemmanagerSettings;
 use CRM_MembershipExtras_SettingsManager as SettingsManager;
@@ -14,11 +14,12 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
    *
    * @param $schedule
    * @param $membershipID
+   * @param null $payments_storage retrieved data from user
    *
    * @return array
    * @throws CiviCRM_API3_Exception
    */
-  public static function getInstalmentDetails($schedule, $membershipID) {
+  public static function getInstalmentDetails($schedule, $membershipID, $payments_storage = null) {
     $membershipType = civicrm_api3('Membership', 'get', [
       'sequential' => 1,
       'id' => $membershipID,
@@ -30,7 +31,10 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
       $instalmentDetails['instalments_count'] = 1;
     }
     else {
-      $instalmentDetails['instalments_count'] = self::getInstalmentCountBySchedule($schedule);
+        if (empty($payments_storage))
+            $instalmentDetails['instalments_count'] = self::getInstalmentCountBySchedule($schedule);
+        else
+            $instalmentDetails['instalments_count'] = count($payments_storage['payments']);
     }
     $instalmentDetails['instalments_frequency'] = self::getFrequencyInterval($schedule);
     $instalmentDetails['instalments_frequency_unit'] = self::getFrequencyUnit($schedule, $instalmentDetails['instalments_frequency']);
@@ -48,7 +52,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
    * @return int
    */
   public static function getFrequencyInterval($schedule) {
-    return $schedule == InstalmentsSchedule::QUARTERLY ? 3 : 1;
+    return 1;
   }
 
   /**
@@ -64,7 +68,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
    * @return string
    */
   public static function getFrequencyUnit($schedule, $interval) {
-    return $interval == 1 && $schedule == InstalmentsSchedule::ANNUAL ? 'year' : 'month';
+    return 'month';
   }
 
   /**
@@ -177,15 +181,15 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
 
   public static function getPaymentPlanSchedule($frequencyUnit, $frequencyInterval, $installmentsCount) {
     if ($frequencyUnit == 'month' && $frequencyInterval == 1 && $installmentsCount == 12) {
-      return InstalmentsSchedule::MONTHLY;
+      return InstalmentsScheduleService::MONTHLY;
     }
 
     if ($frequencyUnit == 'month' && $frequencyInterval == 3 && $installmentsCount == 4) {
-      return InstalmentsSchedule::QUARTERLY;
+      return InstalmentsScheduleService::QUARTERLY;
     }
 
     if ($frequencyUnit == 'year' && $frequencyInterval == 1 && $installmentsCount == 1) {
-      return InstalmentsSchedule::ANNUAL;
+      return InstalmentsScheduleService::ANNUAL;
     }
   }
 

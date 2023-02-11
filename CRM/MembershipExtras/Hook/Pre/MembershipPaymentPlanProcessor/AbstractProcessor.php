@@ -6,6 +6,7 @@ use CRM_MembershipExtras_Service_MembershipInstalmentAmountCalculator as Instalm
 use CRM_MembershipExtras_Service_MembershipTypeDurationCalculator as MembershipTypeDurationCalculator;
 use CRM_MembershipExtras_Service_MembershipTypeDatesCalculator as MembershipTypeDatesCalculator;
 use CRM_MembershipExtras_Service_MembershipPeriodType_RollingPeriodTypeCalculator as RollingPeriodTypeCalculator;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 
 class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProcessor {
 
@@ -79,7 +80,13 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
    */
   protected function assignInstalmentDetails() {
     $this->paymentPlanSchedule = CRM_Utils_Request::retrieve('payment_plan_schedule', 'String');
-    $instalmentDetails = InstalmentScheduleHelper::getInstalmentDetails($this->paymentPlanSchedule, self::$membership_id);
+    if (SettingsManager::getAllowItemmanager())
+    {
+        $storage = json_decode(CRM_Utils_Request::retrieve('payment_plan_datastorage', 'String'), true);
+        $instalmentDetails = CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule::getInstalmentDetails($this->paymentPlanSchedule, self::$membership_id, $storage);
+    }
+    else
+        $instalmentDetails = InstalmentScheduleHelper::getInstalmentDetails($this->paymentPlanSchedule, self::$membership_id);
     $this->instalmentsCount = $instalmentDetails['instalments_count'];
     $this->instalmentsFrequency = $instalmentDetails['instalments_frequency'];
     $this->instalmentsFrequencyUnit = $instalmentDetails['instalments_frequency_unit'];

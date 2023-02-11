@@ -3,7 +3,7 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 
 require_once(__ROOT__.'/Helper/InstalmentSchedule.php');
-require_once(__ROOT__.'/Helper/ItemmanagerInstalmentSchedule.php');
+require_once(__ROOT__.'/Helper/ItemManagerInstalmentSchedule.php');
 
 use CRM_MembershipExtras_Service_MembershipInstalmentsSchedule as InstalmentsSchedule;
 use CRM_MembershipExtras_Service_MembershipTypeDurationCalculator as DurationCalculator;
