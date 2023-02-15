@@ -117,6 +117,13 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
       return $this->instalmentsCount;
     }
 
+      if (SettingsManager::getAllowItemmanager())
+      {
+          return $this->instalmentsCount;
+      }
+
+
+
     if (is_null($membershipType)) {
       $membershipType = CRM_Member_BAO_MembershipType::findById($this->getMembership()['membership_type_id']);
     }

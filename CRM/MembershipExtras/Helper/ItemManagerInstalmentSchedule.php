@@ -34,7 +34,7 @@ class CRM_MembershipExtras_Helper_ItemManagerInstalmentSchedule {
         if (empty($payments_storage))
             $instalmentDetails['instalments_count'] = self::getInstalmentCountBySchedule($schedule);
         else
-            $instalmentDetails['instalments_count'] = count($payments_storage['payments']);
+            $instalmentDetails['instalments_count'] = count($payments_storage['payment_selected']);
     }
     $instalmentDetails['instalments_frequency'] = self::getFrequencyInterval($schedule);
     $instalmentDetails['instalments_frequency_unit'] = self::getFrequencyUnit($schedule, $instalmentDetails['instalments_frequency']);

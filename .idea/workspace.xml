@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PageRun/MemberPageTabColourUpdate.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PageRun/MemberPageTabColourUpdate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemManagerInstalmentSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/ItemManagerInstalmentSchedule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/info.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +108,7 @@
       <workItem from="1674402222731" duration="53000" />
       <workItem from="1675605119677" duration="798000" />
       <workItem from="1676129911402" duration="18504000" />
+      <workItem from="1676484947719" duration="3002000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -229,16 +232,6 @@
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
-          <line>2</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/PostProcess/MembershipPaymentPlanProcessor.php</url>
-          <line>7</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php</url>
           <line>2</line>
           <option name="timeStamp" value="100" />
@@ -247,6 +240,36 @@
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/InstalmentHelperTrait.php</url>
           <line>4</line>
           <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php</url>
+          <line>10</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php</url>
+          <line>42</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
+          <line>81</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
+          <line>115</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
+          <line>115</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0/CRM/MembershipExtras/Helper/ItemmanagerInstalmentSchedule.php</url>
+          <line>41</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
