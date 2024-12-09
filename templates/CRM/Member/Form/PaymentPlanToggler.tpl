@@ -4,6 +4,7 @@
     {/literal}
     const togglerValue = '{$contribution_type_toggle}';
     const currencySymbol = '{$currency_symbol}';
+    console.info("Wie fangen hier an!")
     paymentPlanToggler(togglerValue, currencySymbol);
     {literal}
   });
@@ -18,7 +19,7 @@
         <a href="#contribution-subtab">{ts}Contribution{/ts}</a>
       </li>
       <li class="crm-tab-button ui-corner-top" data-selector="payment_plan">
-        <a href="#payment_plan-subtab&smartyDebug=1">{ts}Payment Plan{/ts}</a>
+        <a href="#payment_plan-subtab">{ts}Payment Plan{/ts}</a>
       </li>
     </ul>
   </div>

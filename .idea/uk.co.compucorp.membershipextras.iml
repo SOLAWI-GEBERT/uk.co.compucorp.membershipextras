@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0">
-      <excludeFolder url="file://$MODULE_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0" />
+      <sourceFolder url="file://$MODULE_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras-2.0.0" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../civicrm-core" />
     <content url="file://$MODULE_DIR$/../org.stadtlandbeides.itemmanager">

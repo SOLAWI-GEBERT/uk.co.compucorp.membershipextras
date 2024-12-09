@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PhpDebugIgnoredPathsSettings" notify="false">
-    <skipped_paths>
-      <skipped_path path="$PROJECT_DIR$/../Stadt-Land-Beides/JML3/index.php" />
-    </skipped_paths>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/../Stadt-Land-Beides/JML3" />
+    </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7">
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
 </project>

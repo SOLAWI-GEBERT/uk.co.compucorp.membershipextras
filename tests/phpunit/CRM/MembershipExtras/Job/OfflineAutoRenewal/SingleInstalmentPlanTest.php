@@ -3,7 +3,6 @@
 use CRM_MembershipExtras_Test_Entity_PaymentPlanMembershipOrder as PaymentPlanMembershipOrder;
 use CRM_MembershipExtras_Test_Fabricator_MembershipType as MembershipTypeFabricator;
 use CRM_MembershipExtras_Test_Fabricator_PaymentPlanOrder as PaymentPlanOrderFabricator;
-use CRM_MembershipExtras_Test_Fabricator_AutoMembershipUpgradeRule as AutoMembershipUpgradeRuleFabricator;
 use CRM_MembershipExtras_Job_OfflineAutoRenewal_SingleInstalmentPlan as SingleInstalmentRenewalJob;
 use CRM_MembershipExtras_Test_Fabricator_LineItem as LineItemFabricator;
 use CRM_MembershipExtras_Test_Fabricator_RecurringLineItem as RecurringLineItemFabricator;
@@ -483,14 +482,6 @@ class CRM_MembershipExtras_Job_OfflineAutoRenewal_SingleInstalmentPlanTest exten
         'duration_interval' => 1,
         'duration_unit' => 'year',
       ]);
-    AutoMembershipUpgradeRuleFabricator::fabricate([
-      'label' => 'test',
-      'from_membership_type_id' => $this->testRollingMembershipType['id'],
-      'to_membership_type_id' => $testUpgradeMembershipType['id'],
-      'upgrade_trigger_date_type' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_TriggerDateType::MEMBER_START,
-      'period_length' => 1,
-      'period_length_unit' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_PeriodUnit::YEARS,
-    ]);
 
     $singleInstalmentRenewal = new SingleInstalmentRenewalJob();
     $singleInstalmentRenewal->run();
@@ -541,14 +532,6 @@ class CRM_MembershipExtras_Job_OfflineAutoRenewal_SingleInstalmentPlanTest exten
         'duration_interval' => 1,
         'duration_unit' => 'year',
       ]);
-    AutoMembershipUpgradeRuleFabricator::fabricate([
-      'label' => 'test',
-      'from_membership_type_id' => $this->testRollingMembershipType['id'],
-      'to_membership_type_id' => $testUpgradeMembershipType['id'],
-      'upgrade_trigger_date_type' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_TriggerDateType::MEMBER_START,
-      'period_length' => 1,
-      'period_length_unit' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_PeriodUnit::YEARS,
-    ]);
 
     $singleInstalmentRenewal = new SingleInstalmentRenewalJob();
     $singleInstalmentRenewal->run();
@@ -593,14 +576,6 @@ class CRM_MembershipExtras_Job_OfflineAutoRenewal_SingleInstalmentPlanTest exten
       'minimum_fee' => 120,
       'duration_interval' => 1,
       'duration_unit' => 'year',
-    ]);
-    AutoMembershipUpgradeRuleFabricator::fabricate([
-      'label' => 'test',
-      'from_membership_type_id' => $this->testRollingMembershipType['id'],
-      'to_membership_type_id' => $testUpgradeMembershipType['id'],
-      'upgrade_trigger_date_type' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_TriggerDateType::MEMBER_START,
-      'period_length' => 1,
-      'period_length_unit' => CRM_MembershipExtras_SelectValues_AutoMembershipUpgradeRules_PeriodUnit::YEARS,
     ]);
 
     $singleInstalmentRenewal = new SingleInstalmentRenewalJob();

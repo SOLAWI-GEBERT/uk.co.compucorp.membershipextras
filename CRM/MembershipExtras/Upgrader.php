@@ -5,7 +5,7 @@
  * enabling and disabling the extension. Also includes the code
  * to run the upgrade steps defined in Upgrader/Steps/ directory.
  */
-class CRM_MembershipExtras_Upgrader extends CRM_MembershipExtras_Upgrader_Base {
+class CRM_MembershipExtras_Upgrader extends CRM_Extension_Upgrader_Base {
 
   public function postInstall() {
     // steps that create new entities.
@@ -74,51 +74,7 @@ class CRM_MembershipExtras_Upgrader extends CRM_MembershipExtras_Upgrader_Base {
     }
   }
 
-  // To reduce the size of this Upgrader class we move upgraders to Upgrader/Steps folder.
-  // The functions below override the ones defined in CRM_MembershipExtras_Upgrader_Base file.
-  // These functions allow Civi to process the upgraders added in the Upgrader/Steps folder
-  // because without these functions Civi will not process them by default.
 
-  /**
-   * @inheritdoc
-   */
-  public function hasPendingRevisions() {
-    $revisions = $this->getRevisions();
-    $currentRevisionNum = $this->getCurrentRevision();
-    if (empty($revisions)) {
-      return FALSE;
-    }
-    if (empty($currentRevisionNum)) {
-      return TRUE;
-    }
-    return ($currentRevisionNum < max($revisions));
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function enqueuePendingRevisions(CRM_Queue_Queue $queue) {
-    $currentRevisionNum = (int) $this->getCurrentRevision();
-    foreach ($this->getRevisions() as $revisionClass => $revisionNum) {
-      if ($revisionNum <= $currentRevisionNum) {
-        continue;
-      }
-      $tsParams = [1 => $this->extensionName, 2 => $revisionNum];
-      $title = ts('Upgrade %1 to revision %2', $tsParams);
-      $upgradeTask = new CRM_Queue_Task(
-        [get_class($this), 'runStepUpgrade'],
-        [(new $revisionClass())],
-        $title
-      );
-      $queue->createItem($upgradeTask);
-      $setRevisionTask = new CRM_Queue_Task(
-        [get_class($this), '_queueAdapter'],
-        ['setCurrentRevision', $revisionNum],
-        $title
-      );
-      $queue->createItem($setRevisionTask);
-    }
-  }
 
   /**
    * This is a callback for running step upgraders from the queue
@@ -133,28 +89,6 @@ class CRM_MembershipExtras_Upgrader extends CRM_MembershipExtras_Upgrader_Base {
   public static function runStepUpgrade($context, $step) {
     $step->apply();
     return TRUE;
-  }
-
-  /**
-   * Get a list of revisions.
-   *
-   * @return array
-   *   An array of revisions sorted by the upgrader class as keys
-   */
-  public function getRevisions() {
-    $extensionRoot = __DIR__;
-    $stepClassFiles = glob($extensionRoot . '/Upgrader/Steps/Step*.php');
-    $sortedKeyedClasses = [];
-    foreach ($stepClassFiles as $file) {
-      $class = $this->getUpgraderClassnameFromFile($file);
-      $numberPrefix = 'Steps_Step';
-      $startPos = strpos($class, $numberPrefix) + strlen($numberPrefix);
-      $revisionNum = (int) substr($class, $startPos);
-      $sortedKeyedClasses[$class] = $revisionNum;
-    }
-    asort($sortedKeyedClasses, SORT_NUMERIC);
-
-    return $sortedKeyedClasses;
   }
 
   /**

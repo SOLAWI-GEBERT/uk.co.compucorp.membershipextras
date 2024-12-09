@@ -12,15 +12,27 @@
   <version>15.2.0-02</version>
   <develStage>forked</develStage>
   <compatibility>
-    <ver>5.39</ver>
+    <ver>5.45</ver>
   </compatibility>
   <comments>
     itemmanager patch with workflow for CSA
   </comments>
   <civix>
     <namespace>CRM/MembershipExtras</namespace>
+    <format>24.09.1</format>
   </civix>
   <urls>
     <url desc="Documentation">https://github.com/compucorp/uk.co.compucorp.membershipextras/blob/master/readme.md</url>
   </urls>
+  <mixins>
+    <mixin>menu-xml@1.0.0</mixin>
+    <mixin>setting-php@1.0.0</mixin>
+    <mixin>smarty-v2@1.0.3</mixin>
+    <mixin>entity-types-php@2.0.0</mixin>
+  </mixins>
+  <classloader>
+    <psr0 prefix="CRM_" path="."/>
+    <psr4 prefix="Civi\" path="Civi"/>
+  </classloader>
+  <upgrader>CiviMix\Schema\Membershipextras\AutomaticUpgrader</upgrader>
 </extension>

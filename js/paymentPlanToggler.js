@@ -1,6 +1,10 @@
 function paymentPlanToggler(togglerValue, currencySymbol) {
 
+  console.info("Ich springe hier rein.");
+
+
   CRM.$(function ($) {
+
 
     /**
      * Perform changes on form to add payment plan as an option to pay for
@@ -443,6 +447,9 @@ function paymentPlanToggler(togglerValue, currencySymbol) {
      * @param {object} callBack 
      */
     function waitForElement($, elementPath, callBack) {
+      console.debug(elementPath);
+      console.debug(document.querySelector(elementPath));
+      if(document.querySelector(elementPath) == null) return;s
       (new MutationObserver(function(mutations) {
         callBack($(elementPath));
       })).observe(document.querySelector(elementPath), {
