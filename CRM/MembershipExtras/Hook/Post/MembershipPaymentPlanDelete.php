@@ -92,7 +92,10 @@ class CRM_MembershipExtras_Hook_Post_MembershipPaymentPlanDelete {
 
 
           CRM_Contribute_BAO_Contribution::deleteContribution((int)$contribution_link['contribution_id']);
-          CRM_Member_BAO_MembershipPayment::deleteRecord($contribution_link);
+          $result = civicrm_api3('MembershipPayment', 'getcount', [
+              'id' => (int)$contribution_link['id'],
+          ]);
+          if($result != 0) CRM_Member_BAO_MembershipPayment::deleteRecord($contribution_link);
 
       }
 

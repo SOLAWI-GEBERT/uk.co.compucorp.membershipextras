@@ -7,53 +7,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="FIX Add more mailblocker workflows we don't want">
+    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="ENH Upgrade membership extras to new civiCRM Version">
+      <change beforePath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/BAO/AutoMembershipUpgradeRule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/DAO/AutoMembershipUpgradeRule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/DAO/ContributionRecurLineItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/DAO/ContributionRecurLineItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Form/AutomatedUpgradeRuleDelete.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/PaymentPlanTogglerTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Helper/PaymentPlanTogglerTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Page/AutomatedMembershipUpgradeRule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/SelectValues/AutoMembershipUpgradeRules/PeriodUnit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/SelectValues/AutoMembershipUpgradeRules/TriggerDateType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/AutoUpgradableMembershipChecker.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Test/Fabricator/AutoMembershipUpgradeRule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Upgrader.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Upgrader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Upgrader/Base.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/v3/AutoMembershipUpgradeRule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/paymentPlanToggler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paymentPlanToggler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/membershipextras.civix.php" beforeDir="false" afterPath="$PROJECT_DIR$/membershipextras.civix.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/membershipextras.php" beforeDir="false" afterPath="$PROJECT_DIR$/membershipextras.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/auto_install.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/auto_uninstall.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/autoupgraderuletable_install.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CRM/Member/Form/UpdateSubscriptionModifications.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/Member/Form/UpdateSubscriptionModifications.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CRM/MembershipExtras/Page/InstalmentSchedule.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/MembershipExtras/Page/InstalmentSchedule.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/BaseHeadlessTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phpunit/BaseHeadlessTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/BAO/AutoMembershipUpgradeRuleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Job/OfflineAutoRenewal/MultiInstalmentPlanTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Job/OfflineAutoRenewal/MultiInstalmentPlanTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Job/OfflineAutoRenewal/SingleInstalmentPlanTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Job/OfflineAutoRenewal/SingleInstalmentPlanTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Service/AutoUpgradableMembershipCheckerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml/Menu/membershipextras.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xml/Menu/membershipextras.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml/schema/CRM/MembershipExtras/AutoMembershipUpgradeRule.entityType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml/schema/CRM/MembershipExtras/AutoMembershipUpgradeRule.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml/schema/CRM/MembershipExtras/ContributionRecurLineItem.entityType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml/schema/CRM/MembershipExtras/ContributionRecurLineItem.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="DONT_SYNCHRONIZE">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/../civicrm-core/composer.json</pharConfigPath>
     <execution>
       <interpreter composer="composer" />
     </execution>
@@ -72,6 +41,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/vendor/symfony/event-dispatcher/EventDispatcher.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/libraries/vendor/composer/ClassLoader.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="NamedScopeManager">
     <scope name="FORMS" pattern="file[uk.co.compucorp.membershipextras]:Civi/Angular/Page/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Logic/*||file[uk.co.compucorp.membershipextras]:CRM/ACL/Form/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Page/*||file[uk.co.compucorp.membershipextras]:CRM/MembershipExtras/Form/*" />
@@ -94,6 +68,9 @@
       <path value="$PROJECT_DIR$/../Stadt-Land-Beides/JML3" />
     </include_path>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2EFpEVBlu82M0ekxhE6elzNu6xQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -102,33 +79,33 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Constants" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.membershipextras.php.executor": "Run",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post" />
       <recent name="$PROJECT_DIR$/CRM/MembershipExtras/Helper" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.164" />
+        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.164" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -174,7 +151,11 @@
       <workItem from="1731803327012" duration="616000" />
       <workItem from="1731804095683" duration="2007000" />
       <workItem from="1733062993772" duration="14017000" />
-      <workItem from="1733731564225" duration="5668000" />
+      <workItem from="1733731564225" duration="5826000" />
+      <workItem from="1734176135135" duration="275000" />
+      <workItem from="1734176572897" duration="4694000" />
+      <workItem from="1734182740171" duration="891000" />
+      <workItem from="1734183816279" duration="3509000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -204,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675605739386</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ENH Upgrade membership extras to new civiCRM Version">
+      <created>1733738008036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733738008036</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,14 +208,14 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ENH Introduce prototype to switch to itemmanager settings" />
     <MESSAGE value="MNT Increasee version" />
     <MESSAGE value="FIX force loading the php files" />
     <MESSAGE value="FIX Add more mailblocker workflows we don't want" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX Add more mailblocker workflows we don't want" />
+    <MESSAGE value="ENH Upgrade membership extras to new civiCRM Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENH Upgrade membership extras to new civiCRM Version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,11 +326,6 @@
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php</url>
-          <line>94</line>
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/membershipextras.php</url>
           <line>106</line>
           <option name="timeStamp" value="109" />
@@ -449,7 +432,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>236</line>
+          <line>237</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -464,7 +447,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>187</line>
+          <line>188</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -504,7 +487,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -526,6 +509,31 @@
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
           <line>222</line>
           <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
+          <line>113</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
+          <line>106</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
+          <line>123</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php</url>
+          <line>97</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php</url>
+          <line>97</line>
+          <option name="timeStamp" value="161" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
