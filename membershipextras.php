@@ -172,8 +172,6 @@ function membershipextras_civicrm_postProcess($formName, &$form) {
   }
 
   if ($formName === 'CRM_Member_Form_MembershipType') {
-    $membershipTypeHook = new CRM_MembershipExtras_Hook_PostProcess_UpdateMembershipTypeColour($form);
-    $membershipTypeHook->process();
 
     $membershipTypeProRataCalculationHook = new CRM_MembershipExtras_Hook_PostProcess_MembershipTypeSetting($form);
     $membershipTypeProRataCalculationHook->process();
@@ -211,8 +209,6 @@ function membershipextras_civicrm_buildForm($formName, &$form) {
   }
 
   if ($formName === 'CRM_Member_Form_MembershipType') {
-    $membershipTypeColourHook = new CRM_MembershipExtras_Hook_BuildForm_MembershipType_Colour($form);
-    $membershipTypeColourHook->buildForm();
 
     $membershipSettingsHook = new CRM_MembershipExtras_Hook_BuildForm_MembershipType_Setting($form);
     $membershipSettingsHook->buildForm();
@@ -234,16 +230,15 @@ function membershipextras_civicrm_buildForm($formName, &$form) {
  * @link https://docs.civicrm.org/dev/en/master/hooks/hook_civicrm_pageRun/
  */
 function membershipextras_civicrm_pageRun($page) {
-  $hooks = [
-    new CRM_MembershipExtras_Hook_PageRun_MembershipTypePageColourUpdate(),
-    new CRM_MembershipExtras_Hook_PageRun_MemberPageTabColourUpdate(),
-    new CRM_MembershipExtras_Hook_PageRun_MemberPageDashboardColourUpdate(),
-    new CRM_MembershipExtras_Hook_PageRun_MemberPageTab(),
-  ];
 
-  foreach ($hooks as $hook) {
-    $hook->handle($page);
-  }
+    $hooks = [
+        new CRM_MembershipExtras_Hook_PageRun_MemberPageTab(),
+    ];
+
+    foreach ($hooks as $hook) {
+        $hook->handle($page);
+    }
+
 
   if (get_class($page) === 'CRM_MembershipExtras_Page_EditContributionRecurLineItems') {
     CRM_Core_Resources::singleton()->addStyleFile(
@@ -375,8 +370,8 @@ function membershipextras_civicrm_alterMailParams(&$params, $context) {
 function membershipextras_civicrm_permission(&$permissions) {
   $permissions += [
     'administer MembershipExtras' => [
-      E::ts('MembershipExtras: administer Membership Extras'),
-      E::ts('Perform all Membership Extras administration tasks in CiviCRM'),
+      'label' => E::ts('MembershipExtras: administer Membership Extras'),
+      'description' => E::ts('Perform all Membership Extras administration tasks in CiviCRM'),
     ],
   ];
 }
