@@ -233,7 +233,7 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
 
     $contribution = CRM_Contribute_BAO_Contribution::create($params);
 
-    $contributionSoftParams = CRM_Utils_Array::value('soft_credit', $params);
+    $contributionSoftParams = $params['soft_credit'];
     if (!empty($contributionSoftParams)) {
       $contributionSoftParams['contribution_id'] = $contribution->id;
       $contributionSoftParams['currency'] = $contribution->currency;
@@ -369,12 +369,12 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
         'entity_table' => $lineItem['entity_table'],
         'entity_id' => $entityID,
         'contribution_id' => $contribution->id,
-        'price_field_id' => CRM_Utils_Array::value('price_field_id', $lineItem),
+        'price_field_id' => $lineItem['price_field_id'],
         'label' => $lineItem['label'],
         'qty' => $lineItem['qty'],
         'unit_price' => $lineItem['unit_price'],
         'line_total' => $lineItem['line_total'],
-        'price_field_value_id' => CRM_Utils_Array::value('price_field_value_id', $lineItem),
+        'price_field_value_id' => $lineItem['price_field_value_id'],
         'financial_type_id' => $lineItem['financial_type_id'],
         'non_deductible_amount' => $lineItem['non_deductible_amount'],
       ];

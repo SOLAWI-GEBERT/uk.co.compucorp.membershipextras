@@ -133,10 +133,10 @@ class CRM_MembershipExtras_Hook_Alter_CalculatedMembershipStatus {
    */
   private function recalculateMembershipStatus(&$calculatedStatus) {
     foreach (self::$memberShipStatuses as $status) {
-      $statusStartEvent = CRM_Utils_Array::value('start_event', $status);
+      $statusStartEvent = $status['start_event'];
       $startEventIsArrearsRelated = stripos($statusStartEvent, 'arrears') !== false;
 
-      $statusEndEvent = CRM_Utils_Array::value('end_event', $status);
+      $statusEndEvent = $status['end_event'];
       $endEventIsArrearsRelated = stripos($statusEndEvent, 'arrears') !== false;
 
       if (!$startEventIsArrearsRelated && !$endEventIsArrearsRelated) {
@@ -150,17 +150,17 @@ class CRM_MembershipExtras_Hook_Alter_CalculatedMembershipStatus {
       }
 
       $startEvent = $this->checkEvent(
-        CRM_Utils_Array::value('start_event', $status),
+        $status['start_event'],
         $this->calculationArguments['status_date'],
-        CRM_Utils_Array::value('start_event_adjust_unit', $status),
-        CRM_Utils_Array::value('start_event_adjust_interval', $status)
+        $status['start_event_adjust_unit'],
+        $status['start_event_adjust_interval']
       );
 
       $endEvent = $this->checkEvent(
-        CRM_Utils_Array::value('end_event', $status),
+        $status['end_event'],
         $this->calculationArguments['status_date'],
-        CRM_Utils_Array::value('start_event_adjust_unit', $status),
-        CRM_Utils_Array::value('start_event_adjust_interval', $status)
+        $status['start_event_adjust_unit'],
+        $status['start_event_adjust_interval']
       );
 
       if ($startEvent && !$endEvent) {

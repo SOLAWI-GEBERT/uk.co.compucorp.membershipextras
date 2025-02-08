@@ -7,17 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="FIX Avoid exception in case the relation has been deleted already">
-      <change beforePath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uk.co.compucorp.membershipextras.iml" afterDir="false" />
+    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="ENH Remove colors because of changed behaviors">
+      <change beforePath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/CRM/Itemmanager/Form/LinkSepaWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/CRM/Itemmanager/Form/LinkSepaWrapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/css/setting.css" beforeDir="false" afterPath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/css/setting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/templates/CRM/Itemmanager/Form/LinkSepaWrapper.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/../org.stadtlandbeides.itemmanager/templates/CRM/Itemmanager/Form/LinkSepaWrapper.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipType/Colour.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PageRun/MemberPageDashboardColourUpdate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PageRun/MemberPageTabColourUpdate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PageRun/MembershipTypePageColourUpdate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/PostProcess/UpdateMembershipTypeColour.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/SettingsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/SettingsManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/membershipextras.php" beforeDir="false" afterPath="$PROJECT_DIR$/membershipextras.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phpunit/CRM/MembershipExtras/Hook/BuildForm/MembershipType/ColourTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,21 +80,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Constants": "true",
-    "JavaScript Debug.membershipextras.php.executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web.server",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Constants&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.membershipextras.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web.server&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post" />
@@ -164,7 +159,8 @@
       <workItem from="1734182740171" duration="891000" />
       <workItem from="1734183816279" duration="4940000" />
       <workItem from="1734263073528" duration="13536000" />
-      <workItem from="1734794967320" duration="8731000" />
+      <workItem from="1734794967320" duration="9051000" />
+      <workItem from="1737823037557" duration="873000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -209,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734187589682</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ENH Remove colors because of changed behaviors">
+      <option name="closed" value="true" />
+      <created>1734808016640</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734808016640</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +237,8 @@
     <MESSAGE value="FIX Add more mailblocker workflows we don't want" />
     <MESSAGE value="ENH Upgrade membership extras to new civiCRM Version" />
     <MESSAGE value="FIX Avoid exception in case the relation has been deleted already" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX Avoid exception in case the relation has been deleted already" />
+    <MESSAGE value="ENH Remove colors because of changed behaviors" />
+    <option name="LAST_COMMIT_MESSAGE" value="ENH Remove colors because of changed behaviors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -530,7 +535,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>314</line>
+          <line>316</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
       </breakpoints>

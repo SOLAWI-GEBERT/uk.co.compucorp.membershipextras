@@ -100,9 +100,9 @@ class CRM_MembershipExtras_Form_Contribution_Action_Duplicate extends CRM_Core_F
       'is_pay_later' => 1,
       'skipLineItem' => 1,
       'skipCleanMoney' => TRUE,
-      'contribution_recur_id' => CRM_Utils_Array::value('contribution_recur_id', $contribution),
-      'contribution_page_id' => CRM_Utils_Array::value('contribution_page_id', $contribution),
-      'campaign_id' => CRM_Utils_Array::value('contribution_campaign_id', $contribution),
+      'contribution_recur_id' => $contribution['contribution_recur_id'],
+      'contribution_page_id' => $contribution['contribution_page_id'],
+      'campaign_id' => $contribution['contribution_campaign_id'],
     ];
 
     if (!empty($contribution['tax_amount'])) {
@@ -178,12 +178,12 @@ class CRM_MembershipExtras_Form_Contribution_Action_Duplicate extends CRM_Core_F
         'entity_table' => $lineItem['entity_table'],
         'entity_id' => $entityID,
         'contribution_id' => $this->duplicateContribution->id,
-        'price_field_id' => CRM_Utils_Array::value('price_field_id', $lineItem),
+        'price_field_id' => $lineItem['price_field_id'],
         'label' => $lineItem['label'],
         'qty' => $lineItem['qty'],
         'unit_price' => $lineItem['unit_price'],
         'line_total' => $lineItem['line_total'],
-        'price_field_value_id' => CRM_Utils_Array::value('price_field_value_id', $lineItem),
+        'price_field_value_id' => $lineItem['price_field_value_id'],
         'financial_type_id' => $lineItem['financial_type_id'],
         'non_deductible_amount' => $lineItem['non_deductible_amount'],
       ];
