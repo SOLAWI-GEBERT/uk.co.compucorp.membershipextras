@@ -53,7 +53,7 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
                                         $endDate = NULL,
                                         $joinDate = NULL,
                                         $priceValues = NULL
-  ) {
+  ): array {
     if ($membershipType->period_type == 'fixed' && $schedule == InstalmentsSchedule::MONTHLY && !is_null($startDate)) {
       $durationCalculator = new DurationCalculator($membershipType, new DateCalculator());
 
@@ -62,7 +62,7 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
 
     $durationUnit = $membershipType->duration_unit;
     if ($membershipType->period_type == 'rolling' && ($durationUnit == 'month' || $durationUnit == 'lifetime')) {
-      return 1;
+      return [1 , false] ;
     }
 
     if ( SettingsManager::getAllowItemmanager())
@@ -72,11 +72,13 @@ trait CRM_MembershipExtras_Helper_InstalmentHelperTrait {
         $startDate,
         $priceValues);
 
-        return $resultData['InstalmentInterval'];
+        $reverse = (bool)$resultData['ItemManagerPeriod']['reverse'];
+
+        return [$resultData['InstalmentInterval'], $reverse];
 
     }
     else
-        return CRM_MembershipExtras_Helper_InstalmentSchedule::getInstalmentCountBySchedule($schedule);
+        return [CRM_MembershipExtras_Helper_InstalmentSchedule::getInstalmentCountBySchedule($schedule), false];
   }
 
 }

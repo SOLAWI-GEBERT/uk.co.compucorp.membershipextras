@@ -45,9 +45,10 @@ class CRM_MembershipExtras_Service_MembershipPeriodType_FixedPeriodTypeCalculato
    */
   private $membershipTypes;
 
-  public function __construct(array $membershipTypes) {
+  public function __construct(array $membershipTypes, bool $reverse) {
     $this->instalmentTaxAmountCalculator = new MembershipInstalmentTaxAmountCalculator();
     $this->membershipTypes = $membershipTypes;
+    $this->reverse = $reverse;
   }
 
   /**
@@ -57,10 +58,11 @@ class CRM_MembershipExtras_Service_MembershipPeriodType_FixedPeriodTypeCalculato
    * @param $amount
    * @param $duration
    * @param $diff
+   * @param $reverse bool the logic is reverse
    * @return float|int
    */
-  private function calculateProRatedAmount($amount, $duration, $diff) {
-    return ($amount / $duration) * $diff;
+  private function calculateProRatedAmount($amount, $duration, $diff, $reverse) {
+    return $reverse ? $amount * $diff :($amount / $duration) * $diff;
   }
 
   /**
@@ -91,8 +93,8 @@ class CRM_MembershipExtras_Service_MembershipPeriodType_FixedPeriodTypeCalculato
           $this->proRatedNumber = $membershipTypeDurationCalculator->calculateDaysBasedOnDates($this->startDate, $this->endDate, $this->joinDate);
         }
       }
-      $amount = $this->calculateProRatedAmount($membershipAmount, $duration, $this->proRatedNumber);
-      $taxAmount = $this->calculateProRatedAmount($taxAmount, $duration, $this->proRatedNumber);
+      $amount = $this->calculateProRatedAmount($membershipAmount, $duration, $this->proRatedNumber, $this->reverse);
+      $taxAmount = $this->calculateProRatedAmount($taxAmount, $duration, $this->proRatedNumber, $this->reverse);
 
       $this->amount += $amount;
       $this->taxAmount += $taxAmount;

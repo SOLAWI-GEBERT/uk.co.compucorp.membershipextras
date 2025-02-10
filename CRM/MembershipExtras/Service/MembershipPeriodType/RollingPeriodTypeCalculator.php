@@ -11,9 +11,10 @@ class CRM_MembershipExtras_Service_MembershipPeriodType_RollingPeriodTypeCalcula
    */
   private $membershipTypes;
 
-  public function __construct(array $membershipTypes) {
+  public function __construct(array $membershipTypes, bool $reverse) {
     $this->instalmentTaxAmountCalculator = new MembershipInstalmentTaxAmountCalculator();
     $this->membershipTypes = $membershipTypes;
+    $this->reverse = $reverse;
   }
 
   /**

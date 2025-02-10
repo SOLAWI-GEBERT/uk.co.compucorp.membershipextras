@@ -22,7 +22,7 @@ abstract class CRM_MembershipExtras_API_PaymentSchedule_Base {
       CRM_MembershipExtras_Service_MembershipInstalmentsSchedule::QUARTERLY,
       CRM_MembershipExtras_Service_MembershipInstalmentsSchedule::ANNUAL,
     ])) {
-      throw new API_Exception('The selected schedule is not monthly, quarterly or annual');
+      throw API_Exception('The selected schedule is not monthly, quarterly or annual');
     }
   }
 
@@ -42,7 +42,8 @@ abstract class CRM_MembershipExtras_API_PaymentSchedule_Base {
     $priceValues = !empty($this->params['price_field_values']) ? $this->params['price_field_values']['IN'] :NULL;
     $membershipInstalmentsSchedule = new CRM_MembershipExtras_Service_MembershipInstalmentsSchedule(
       $membershipTypes,
-      $this->params['schedule']
+      $this->params['schedule'],
+      (bool)$this->params['reverse']
     );
 
     if (!empty($nonMembershipPriceFieldValues)) {

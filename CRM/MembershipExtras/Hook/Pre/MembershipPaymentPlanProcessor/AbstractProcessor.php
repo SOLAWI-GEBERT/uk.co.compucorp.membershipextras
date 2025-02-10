@@ -56,6 +56,12 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
    */
   protected $params;
 
+    /**
+     * The period calculation is calculated in reverse
+     * @var bool
+     */
+  protected $reverse;
+
   /**
    * Checks if priceset was selected on the form to create the membership.
    *
@@ -94,13 +100,13 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
 
   protected function getInstalmentAmountCalculator(array $membershipTypes, $periodType = 'rolling') {
     if ($periodType == 'fixed') {
-      $calculator = new FixedPeriodTypeCalculator($membershipTypes);
+      $calculator = new FixedPeriodTypeCalculator($membershipTypes, $this->reverse);
       $calculator->setStartDate(new DateTime($this->getMembership()['start_date']));
       $calculator->setEndDate(new DateTime($this->getMembership()['end_date']));
       $calculator->setJoinDate(new DateTime($this->getMembership()['join_date']));
     }
     else {
-      $calculator = new RollingPeriodTypeCalculator($membershipTypes);
+      $calculator = new RollingPeriodTypeCalculator($membershipTypes, $this->reverse);
     }
 
     $instalmentAmountCalculator = new InstalmentAmountCalculator($calculator);

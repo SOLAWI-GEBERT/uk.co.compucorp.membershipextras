@@ -40,6 +40,13 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_Contribution 
    */
   private $instalmentAmountCalculator;
 
+    /**
+     *
+     *
+     * @var bool
+     */
+  protected $reverse;
+
   /**
    * @throws CiviCRM_API3_Exception
    * @throws CRM_Core_Exception
@@ -50,6 +57,7 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_Contribution 
     $this->assignInstalmentDetails();
     $this->handleContributionLineItems();
     $this->instalmentAmountCalculator = $this->getInstalmentAmountCalculator($this->membershipTypeLineItems, $this->periodType);
+    $this->reverse = (bool)$this->params['reverse'];
   }
 
   /**

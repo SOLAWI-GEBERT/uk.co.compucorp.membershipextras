@@ -88,6 +88,7 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor
         $paymentPlanSchedule = $this->formSubmittedValues['payment_plan_schedule'];
         $instalmentDetails = InstalmentScheduleHelper::getInstalmentDetails($paymentPlanSchedule, $this->form->_id);
         $instalmentsCount = $instalmentDetails['instalments_count'];
+        $reverse = false;
         if ($instalmentsCount == 1) {
             $this->updateNextScheduledContributionDate();
             return;
@@ -96,7 +97,7 @@ class CRM_MembershipExtras_Hook_PostProcess_MembershipPaymentPlanProcessor
         $membershipTypeObj = CRM_Member_BAO_MembershipType::findById($this->membershipTypeId);
         $startDate = $this->getStartDate();
         if (empty($this->userselection))
-            $actualInstalmentCount = $this->getInstalmentsNumber($membershipTypeObj, $paymentPlanSchedule, $startDate);
+            list($actualInstalmentCount, $reverse ) = $this->getInstalmentsNumber($membershipTypeObj, $paymentPlanSchedule, $startDate);
         else
             # here try to use the user selected amount
             $actualInstalmentCount = count($this->userselection['payments']);

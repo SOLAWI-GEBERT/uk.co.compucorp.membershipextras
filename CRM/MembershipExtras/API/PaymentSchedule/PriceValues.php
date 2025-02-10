@@ -72,7 +72,7 @@ class CRM_MembershipExtras_API_PaymentSchedule_PriceValues extends CRM_Membershi
       $this->membershipTypes[] = $membershipType;
     }
 
-    if (empty($membershipTypes)) {
+    if (empty($this->membershipTypes)) {
       new API_Exception(ts('At least one price field items must be of type membership'));
     }
   }

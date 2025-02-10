@@ -9,6 +9,7 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_LineItem exte
   public function __construct(&$params) {
     $this->params = &$params;
     $this->assignInstalmentDetails();
+    $this->reverse = (bool)$this->params['reverse'];
   }
 
   /**

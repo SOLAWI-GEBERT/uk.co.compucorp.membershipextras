@@ -1,5 +1,8 @@
 <?php
 
+use Civi\Api4\ItemmanagerPeriods;
+use Civi\Api4\ItemmanagerSettings;
+use CRM_MembershipExtras_SettingsManager as SettingsManager;
 class CRM_MembershipExtras_Page_InstalmentSchedule extends CRM_Core_Page {
 
     function __construct($title = NULL, $mode = NULL)
@@ -24,16 +27,48 @@ class CRM_MembershipExtras_Page_InstalmentSchedule extends CRM_Core_Page {
     $action = 'getbymembershiptype';
     if (isset($membershipTypeId)) {
       $params['membership_type_id'] = $membershipTypeId;
+      $params['reverse'] = FALSE;
     }
     elseif (isset($priceFieldValues)) {
       $params['price_field_values'] = ['IN' => $priceFieldValues];
       $action = 'getbypricefieldvalues';
+
+        if ( SettingsManager::getAllowItemmanager())
+        {
+
+
+            $priceValueKeys = array_keys($priceFieldValues);
+# start here to get the first setting (all records)
+            $firstSetting = ItemmanagerSettings::get()
+                ->addWhere('price_field_value_id','IN',$priceValueKeys)
+                ->execute()
+                ->first();
+
+            if (empty($firstSetting))
+            {
+                $errorResponse = [
+                    'is_error' => TRUE,
+                    'error_message' => ts('No ItemmanagerSettings has been found. Inform administrator.'),
+                ];
+                CRM_Core_Page_AJAX::returnJsonResponse($errorResponse);
+
+            }
+
+            # now we need the period record
+            $relatedPeriod = ItemmanagerPeriods::get()
+                ->addWhere('id','=',$firstSetting['itemmanager_periods_id'])
+                ->execute()
+                ->single();
+
+            $params['reverse'] = (bool)$relatedPeriod['reverse'];
+        }
     }
 
     $params['schedule'] = CRM_Utils_Request::retrieve('schedule', 'String');
     $params['payment_method'] = CRM_Utils_Request::retrieve('payment_method', 'Int');
     $params['start_date'] = CRM_Utils_Request::retrieve('start_date', 'String');
     $params['join_date'] = CRM_Utils_Request::retrieve('join_date', 'String');
+
 
     try {
       $result = civicrm_api3('PaymentSchedule', $action, $params);
