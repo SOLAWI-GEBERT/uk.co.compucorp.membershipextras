@@ -13,6 +13,7 @@ class CRM_MembershipExtras_API_PaymentSchedule_PriceValues extends CRM_Membershi
    */
   private $membershipTypes;
 
+
   /**
    * CRM_MembershipExtras_API_PriceValues constructor.
    * @param $params
@@ -21,6 +22,7 @@ class CRM_MembershipExtras_API_PaymentSchedule_PriceValues extends CRM_Membershi
    */
   public function __construct($params) {
     $this->params = $params;
+    $this->reverse = (bool)$this->params['reverse'];
   }
 
   /**

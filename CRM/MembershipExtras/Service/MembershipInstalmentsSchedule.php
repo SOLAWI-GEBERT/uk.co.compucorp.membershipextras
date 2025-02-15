@@ -241,10 +241,10 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsSchedule {
       $fixedPeriodTypCalculator->setStartDate($this->startDate);
       $fixedPeriodTypCalculator->setEndDate($this->endDate);
       $fixedPeriodTypCalculator->setJoinDate($this->joinDate);
-      $this->instalmentCalculator = new InstalmentAmountCalculator($fixedPeriodTypCalculator);
+      $this->instalmentCalculator = new InstalmentAmountCalculator($fixedPeriodTypCalculator, $this->reverse);
     }
     else {
-      $this->instalmentCalculator = new InstalmentAmountCalculator(new RollingPeriodCalculator($this->membershipTypes, $this->reverse));
+      $this->instalmentCalculator = new InstalmentAmountCalculator(new RollingPeriodCalculator($this->membershipTypes, $this->reverse), $this->reverse);
     }
   }
 

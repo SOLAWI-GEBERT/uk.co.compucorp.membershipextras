@@ -7,6 +7,13 @@ abstract class CRM_MembershipExtras_API_PaymentSchedule_Base {
 
   protected $params;
 
+    /**
+     *
+     *
+     * @var bool
+     */
+    protected $reverse;
+
   abstract public function getPaymentSchedule();
 
   abstract public function getPaymentScheduleOptions();

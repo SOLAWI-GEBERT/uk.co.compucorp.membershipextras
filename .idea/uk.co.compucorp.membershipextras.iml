@@ -8,8 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/../civicrm-core/packages" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../civicrm-core/setup/src" isTestSource="false" packagePrefix="Civi\" />
       <sourceFolder url="file://$MODULE_DIR$/../civicrm-core/tests/phpunit" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../civicrm-core" />
     </content>
-    <content url="file://$MODULE_DIR$/../org.stadtlandbeides.itemmanager" />
+    <content url="file://$MODULE_DIR$/../org.stadtlandbeides.itemmanager">
+      <excludeFolder url="file://$MODULE_DIR$/../org.stadtlandbeides.itemmanager" />
+    </content>
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
