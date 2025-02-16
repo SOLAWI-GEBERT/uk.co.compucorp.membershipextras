@@ -64,8 +64,6 @@ CRM.$(function ($) {
           }
 
           sched_storage.value +="}}";
-          console.log("Payments " + sched_storage.value );
-
 
       });
 });

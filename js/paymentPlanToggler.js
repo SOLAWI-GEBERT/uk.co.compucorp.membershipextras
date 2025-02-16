@@ -1,8 +1,5 @@
 function paymentPlanToggler(togglerValue, currencySymbol) {
 
-  console.info("Ich springe hier rein.");
-
-
   CRM.$(function ($) {
 
 
@@ -46,10 +43,14 @@ function paymentPlanToggler(togglerValue, currencySymbol) {
      */
     function selectPaymentPlanTab(tabOptionId) {
       const allTabsSelector = '#payment_plan_fields_tabs li';
+      const allLinkSelector = '#payment_plan_fields_tabs a';
       const tabSelector = `${allTabsSelector}[data-selector=${tabOptionId}]`;
+      const buttonSelector = `${allLinkSelector}[data-selector=${tabOptionId}]`;
 
       $(allTabsSelector).removeClass('ui-tabs-active');
+      $(allLinkSelector).addClass('button');
       $(tabSelector).addClass('ui-tabs-active');
+      $(buttonSelector).removeClass('button');
       $('[name=contribution_type_toggle]').val(tabOptionId);
       updateContributionPaymentPlanView(tabOptionId);
     }
@@ -222,7 +223,6 @@ function paymentPlanToggler(togglerValue, currencySymbol) {
           }
 
           sched_storage.value +="}}";
-          console.log("Payments " + sched_storage.value );
         }
       });
     }
