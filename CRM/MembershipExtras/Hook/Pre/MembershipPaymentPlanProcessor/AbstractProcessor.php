@@ -86,6 +86,8 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
    */
   protected function assignInstalmentDetails() {
     $this->paymentPlanSchedule = CRM_Utils_Request::retrieve('payment_plan_schedule', 'String');
+    $reverse = CRM_Utils_Request::retrieve('payment_plan_reverse', 'Boolean');
+    $this->reverse = $reverse != null ? (bool) $reverse : FALSE    ;
     if (SettingsManager::getAllowItemmanager())
     {
         $storage = json_decode(CRM_Utils_Request::retrieve('payment_plan_datastorage', 'String'), true);
@@ -109,7 +111,7 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_AbstractProce
       $calculator = new RollingPeriodTypeCalculator($membershipTypes, $this->reverse);
     }
 
-    $instalmentAmountCalculator = new InstalmentAmountCalculator($calculator);
+    $instalmentAmountCalculator = new InstalmentAmountCalculator($calculator, $this->reverse);
     $instalmentAmountCalculator->getCalculator()->calculate();
 
     return $instalmentAmountCalculator;

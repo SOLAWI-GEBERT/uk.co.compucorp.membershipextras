@@ -7,16 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="ENH introduce reverse logic for nonmembership lineitem types">
+    <list default="true" id="9443b31e-fe11-4197-a5d5-2c1f3be1aed3" name="Default Changelist" comment="MNT make style for payment more intuitiv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/BuildForm/MembershipPaymentPlan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/Contribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/Contribution.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Page/InstalmentSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Page/InstalmentSchedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/AbstractPeriodTypeCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/AbstractPeriodTypeCalculator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/FixedPeriodTypeCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/FixedPeriodTypeCalculator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/RollingPeriodTypeCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/CRM/MembershipExtras/Service/MembershipPeriodType/RollingPeriodTypeCalculator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/instalmentSchedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/instalmentSchedule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/paymentPlanToggler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/paymentPlanToggler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CRM/Member/Form/PaymentPlanToggler.tpl" afterDir="false" />
     </list>
@@ -86,21 +87,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Constants": "false",
-    "JavaScript Debug.membershipextras.php.executor": "Run",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web-ide.project.structure",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Constants&quot;: &quot;false&quot;,
+    &quot;JavaScript Debug.membershipextras.php.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post" />
@@ -169,7 +170,8 @@
       <workItem from="1737823037557" duration="873000" />
       <workItem from="1739097240995" duration="9682000" />
       <workItem from="1739172697614" duration="6319000" />
-      <workItem from="1739629341066" duration="23903000" />
+      <workItem from="1739629341066" duration="33129000" />
+      <workItem from="1739777507473" duration="2890000" />
     </task>
     <task id="LOCAL-00001" summary="ENH Introduce prototype to switch to itemmanager settings">
       <created>1673122201449</created>
@@ -238,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739639257135</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="MNT make style for payment more intuitiv">
+      <option name="closed" value="true" />
+      <created>1739721813675</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739721813675</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +276,8 @@
     <MESSAGE value="MNT remove deprecated ARRAY" />
     <MESSAGE value="ENH create framework for a reverse period calculation" />
     <MESSAGE value="ENH introduce reverse logic for nonmembership lineitem types" />
-    <option name="LAST_COMMIT_MESSAGE" value="ENH introduce reverse logic for nonmembership lineitem types" />
+    <MESSAGE value="MNT make style for payment more intuitiv" />
+    <option name="LAST_COMMIT_MESSAGE" value="MNT make style for payment more intuitiv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -288,7 +299,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/administrator/components/com_civicrm/civicrm/CRM/Member/Form/Membership.php</url>
-          <line>1318</line>
+          <line>1320</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -358,7 +369,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
-          <line>116</line>
+          <line>123</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -442,11 +453,6 @@
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>106</line>
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/CRM/MembershipExtras/Hook/Post/MembershipPaymentPlanDelete.php</url>
           <line>97</line>
           <option name="timeStamp" value="159" />
@@ -502,11 +508,6 @@
           <option name="timeStamp" value="194" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/api/v3/PaymentSchedule/Getbymembershiptype.php</url>
           <line>60</line>
           <option name="timeStamp" value="204" />
@@ -543,12 +544,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>129</line>
-          <option name="timeStamp" value="253" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="254" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -568,11 +564,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>195</line>
-          <option name="timeStamp" value="260" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
           <line>187</line>
           <option name="timeStamp" value="261" />
         </line-breakpoint>
@@ -580,26 +571,6 @@
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
           <line>161</line>
           <option name="timeStamp" value="263" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/membershipextras.php</url>
-          <line>134</line>
-          <option name="timeStamp" value="264" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Service/MembershipPeriodType/AbstractPeriodTypeCalculator.php</url>
-          <line>70</line>
-          <option name="timeStamp" value="265" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Service/MembershipPeriodType/RollingPeriodTypeCalculator.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="266" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Service/MembershipPeriodType/RollingPeriodTypeCalculator.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="267" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Service/MembershipInstalmentsSchedule.php</url>
@@ -628,8 +599,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
-          <line>109</line>
+          <line>116</line>
           <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/AbstractProcessor.php</url>
+          <line>110</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/Contribution.php</url>
+          <line>60</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/../Stadt-Land-Beides/JML3/media/civicrm/ext/uk.co.compucorp.membershipextras/CRM/MembershipExtras/Hook/Pre/MembershipPaymentPlanProcessor/LineItem.php</url>
+          <line>12</line>
+          <option name="timeStamp" value="278" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -82,6 +82,7 @@ class CRM_MembershipExtras_Page_InstalmentSchedule extends CRM_Core_Page {
 
       $this->_backward_search = $result['values']['instalments'];
       Civi::resources()->addVars('membershipextras_paymentplan',$this->_backward_search);
+      Civi::resources()->addVars('membershipextras_paymentplan_reverse',array($params['reverse']));
 
       if (isset($result['values']['prorated_number']) && isset($result['values']['prorated_unit'])) {
         $this->assign('prorated_number', $result['values']['prorated_number']);

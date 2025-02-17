@@ -4,7 +4,6 @@
     {/literal}
     const togglerValue = '{$contribution_type_toggle}';
     const currencySymbol = '{$currency_symbol}';
-    console.info("Wie fangen hier an!")
     paymentPlanToggler(togglerValue, currencySymbol);
     {literal}
   });
@@ -13,6 +12,7 @@
 <div id="payment_plan_fields_tabs">
   <input name="contribution_type_toggle" type="hidden">
   <input name="payment_plan_datastorage" id="payment_plan_datastorage" type="hidden">
+  <input name="payment_plan_reverse" id="payment_plan_reverse" type="hidden">
   {if $enable_paymentplan_period_selector}
   <div class="ui-tabs">
 

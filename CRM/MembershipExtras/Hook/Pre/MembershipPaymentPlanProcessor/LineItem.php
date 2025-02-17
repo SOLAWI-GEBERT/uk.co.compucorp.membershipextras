@@ -9,7 +9,8 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_LineItem exte
   public function __construct(&$params) {
     $this->params = &$params;
     $this->assignInstalmentDetails();
-    $this->reverse = (bool)$this->params['reverse'];
+    $reverse = CRM_Utils_Request::retrieve('payment_plan_reverse', 'Boolean');
+    $this->reverse = $reverse != null ? (bool) $reverse : FALSE;
   }
 
   /**
@@ -62,11 +63,11 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_LineItem exte
    */
   private function handleNonMembershipTypeLineItem() {
     $instalmentCount = $this->getInstalmentCount();
-
-    $this->params['line_total'] = $this->calculateSingleInstalmentAmount($this->params['line_total'], $instalmentCount);
-    $this->params['unit_price'] = $this->calculateSingleInstalmentAmount($this->params['unit_price'], $instalmentCount);
+    $period = $this->reverse ? 1 : $instalmentCount;
+    $this->params['line_total'] = $this->calculateSingleInstalmentAmount($this->params['line_total'], $period);
+    $this->params['unit_price'] = $this->calculateSingleInstalmentAmount($this->params['unit_price'], $period);
     if (!empty($this->params['tax_amount'])) {
-      $this->params['tax_amount'] = $this->calculateSingleInstalmentAmount($this->params['tax_amount'], $instalmentCount);
+      $this->params['tax_amount'] = $this->calculateSingleInstalmentAmount($this->params['tax_amount'], $period);
     }
   }
 

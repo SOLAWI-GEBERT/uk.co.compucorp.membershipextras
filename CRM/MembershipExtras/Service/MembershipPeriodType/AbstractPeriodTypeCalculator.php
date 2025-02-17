@@ -27,11 +27,6 @@ abstract class CRM_MembershipExtras_Service_MembershipPeriodType_AbstractPeriodT
    */
   protected $quantity = 1;
 
-    /**
-     * @var bool the period calculation runs in reverse
-     */
-  protected $reverse = false;
-
   /**
    * @var \CRM_MembershipExtras_Service_MembershipInstalmentTaxAmountCalculator
    */

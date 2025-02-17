@@ -201,9 +201,13 @@ function paymentPlanToggler(togglerValue, currencySymbol) {
 
           // update form element
           var sched_table = document.getElementById('instalment_row_table');
+          console.info("Start hier");
           var checks = sched_table.getElementsByClassName('schedule-row-active');
           var payments = CRM.vars['membershipextras_paymentplan'];
+          var reverse = CRM.vars['membershipextras_paymentplan_reverse'];
           var sched_storage = document.getElementById('payment_plan_datastorage');
+          var plan_reverse = document.getElementById('payment_plan_reverse');
+          plan_reverse.value = reverse[0];
           // play back shown data
           sched_storage.value = "{";
           sched_storage.value += '"payments":' +JSON.stringify(payments) + ",";

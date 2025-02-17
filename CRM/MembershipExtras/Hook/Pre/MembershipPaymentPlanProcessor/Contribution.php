@@ -57,7 +57,9 @@ class CRM_MembershipExtras_Hook_Pre_MembershipPaymentPlanProcessor_Contribution 
     $this->assignInstalmentDetails();
     $this->handleContributionLineItems();
     $this->instalmentAmountCalculator = $this->getInstalmentAmountCalculator($this->membershipTypeLineItems, $this->periodType);
-    $this->reverse = (bool)$this->params['reverse'];
+    $reverse = CRM_Utils_Request::retrieve('payment_plan_reverse', 'Boolean');
+    $this->reverse = $reverse != null ? (bool) $reverse : FALSE;
+
   }
 
   /**
