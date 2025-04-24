@@ -145,6 +145,7 @@ function membershipextras_civicrm_post($op, $objectName, $objectId, &$objectRef)
 function membershipextras_civicrm_postProcess($formName, &$form) {
   $isAddAction = $form->getAction() & CRM_Core_Action::ADD;
   $isRenewAction = $form->getAction() & CRM_Core_Action::RENEW;
+  $isDeleteAction = $form->getAction() & CRM_Core_Action::DELETE;
 
   if (($formName === 'CRM_Member_Form_Membership' && $isAddAction) || ($formName === 'CRM_Member_Form_MembershipRenewal' && $isRenewAction)) {
 
@@ -176,6 +177,19 @@ function membershipextras_civicrm_postProcess($formName, &$form) {
     $membershipTypeProRataCalculationHook = new CRM_MembershipExtras_Hook_PostProcess_MembershipTypeSetting($form);
     $membershipTypeProRataCalculationHook->process();
   }
+
+  //delete payment if needed
+  if ($formName === 'CRM_Contribute_Form_Contribution' &&  $isDeleteAction) {
+     $contribution_id = CRM_Utils_Request::retrieveValue('id', 'Positive', NULL);
+     $context = CRM_Utils_Request::retrieve('context', 'String', NULL);
+
+     if ($context == 'contribution') {
+         $query = "DELETE FROM civicrm_membership_payment
+                WHERE contribution_id = {$contribution_id}";
+         CRM_Core_DAO::executeQuery($query);
+     }
+  }
+
 }
 
 /**

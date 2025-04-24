@@ -249,17 +249,29 @@ class CRM_MembershipExtras_Form_RecurringContribution_AddMembershipLineItem exte
    * @return array
    */
   private function getDefaultPriceFieldValueForMembershipType($membershipTypeID) {
-    $result = civicrm_api3('PriceFieldValue', 'get', [
-      'sequential' => 1,
-      'membership_type_id' => $membershipTypeID,
-      'price_field_id.price_set_id.name' => 'default_membership_type_amount',
-    ]);
+      $result = \Civi\Api4\PriceFieldValue::get(FALSE)
+          ->addSelect('*')
+          ->addJoin(
+              'PriceField AS price_field',
+              'LEFT',
+              ['price_field_id', '=', 'price_field.id']
+          )
+          ->addJoin(
+              'PriceSet AS price_set',
+              'LEFT',
+              ['price_field.price_set_id', '=', 'price_set.id']
+          )
+          ->addWhere('membership_type_id', '=', $membershipTypeID)
+          ->addWhere('price_set.name', '=', 'default_membership_type_amount')
+          ->execute();
 
-    if ($result['count'] > 0) {
-      return array_shift($result['values']);
-    }
 
-    return [];
+      if (!$result->isEmpty()) {
+          return $result->first();
+      }
+
+
+      return [];
   }
 
   /**

@@ -86,18 +86,20 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
    * Sets $lastContribution
    */
   private function setLastContribution() {
-    $contribution = civicrm_api3('Contribution', 'get', [
-      'sequential' => 1,
-      'return' => [
-        'currency', 'contribution_source', 'net_amount', 'contact_id',
-        'fee_amount', 'total_amount', 'payment_instrument_id', 'is_test',
-        'tax_amount', 'contribution_recur_id', 'financial_type_id', 'receive_date',
-      ],
-      'contribution_recur_id' => $this->currentRecurContribution['id'],
-      'options' => ['limit' => 1, 'sort' => 'id DESC'],
-    ])['values'][0];
+      $contribution = \Civi\Api4\Contribution::get()
+          ->addSelect(
+              'currency', 'source', 'net_amount', 'contact_id',
+              'fee_amount', 'total_amount', 'payment_instrument_id', 'is_test',
+              'tax_amount', 'contribution_recur_id', 'financial_type_id', 'receive_date'
+          )
+          ->addWhere('contribution_recur_id', '=', $this->currentRecurContribution['id'])
+          ->setLimit(1)
+          ->addOrderBy('id', 'DESC')
+          ->execute()
+          ->first();
 
-    $softContribution = civicrm_api3('ContributionSoft', 'get', [
+
+      $softContribution = civicrm_api3('ContributionSoft', 'get', [
       'sequential' => 1,
       'return' => ['contact_id', 'soft_credit_type_id'],
       'contribution_id' => $contribution['id'],
@@ -272,7 +274,7 @@ class CRM_MembershipExtras_Service_MembershipInstalmentsHandler {
   private function buildContributionParams($contributionNumber) {
     $params = [
       'currency' => $this->lastContribution['currency'],
-      'source' => $this->lastContribution['contribution_source'],
+      'source' => $this->lastContribution['source']." ".ts("Instalment")." $contributionNumber",
       'contact_id' => $this->lastContribution['contact_id'],
       'fee_amount' => $this->lastContribution['fee_amount'],
       'net_amount' => $this->lastContribution['net_amount'],
